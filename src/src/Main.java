@@ -4,9 +4,9 @@ import java.io.IOException;
 
 public class Main {
     public static void main(String[] args) throws IOException {
-        Amazon a = new Amazon();
-        Meta m = new Meta();
-        User user = new User("David", "hudavid6");
+        src.Amazon a = new src.Amazon();
+        src.Meta m = new src.Meta();
+        src.User user = new src.User("David", "hudavid6");
         user.addBalance(3000);
         user.buyStocks(a, 5, "11/11/2022");
         user.buyStocks(a, 20, "11/14/2022");
@@ -16,5 +16,5 @@ public class Main {
         System.out.println(user.getNW("11/18/2022"));
         System.out.println(user.getROI("11/18/2022"));
     }
-    
+
 }

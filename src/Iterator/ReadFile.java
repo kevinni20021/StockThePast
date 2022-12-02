@@ -10,9 +10,10 @@ public class ReadFile implements Iterator{
     // This class is responsible for looping through the given files
     private String fileName;
 
-    private int curDay = 20;
-    private int curMonth = 11;
-    private int curYear = 2017;
+    public int curDay = 20;
+    public int curMonth = 11;
+    public int curYear = 2017;
+    private int counter = 0;
 
 
     public ReadFile(String fileName) {
@@ -77,13 +78,24 @@ public class ReadFile implements Iterator{
      * This method will find the information of specified date
      * @return an arraylist that contains all the information for the specified date
      */
-    public ArrayList<String> dayInfo(String day) {
+    public Map<String, String> dayInfo(int day, int month, int year) {
         //check and ask to see if we need to check the correctness of import date
         //if yes, check and ask if we do that here or front end.
-
-        return this.organizeFileInfo().get(day);
-
-
+        String temp = month + "/" + day + "/" + year;;
+        if (month < 10) {
+            temp = "0" + temp;
+        }
+        if (day < 10) {
+            temp = temp.substring(0, 3) + "0" + temp.substring(3);
+        }
+        Map<String, String> values = new HashMap<>();
+        //Date,Close/Last,Volume,Open,High,Low
+        values.put("Close/Last", this.organizeFileInfo().get(temp).get(0));
+        values.put("Volume", this.organizeFileInfo().get(temp).get(1));
+        values.put("Open", this.organizeFileInfo().get(temp).get(2));
+        values.put("High", this.organizeFileInfo().get(temp).get(3));
+        values.put("Low", this.organizeFileInfo().get(temp).get(4));
+        return values;
     }
 
     @Override
@@ -92,34 +104,41 @@ public class ReadFile implements Iterator{
     }
     @Override
     public void getNextDay() {
-        // 2017 11 20
-        if (curMonth == 2) {
-            // no Feb 29 in our data
-            if (curDay <= 27 && curDay >= 1) {
-                curDay++;
-            } else {
-                curDay = 1;
-                curMonth++;
-            }
-        } else if (curMonth == 1 || curMonth == 3 || curMonth == 5 || curMonth == 7 || curMonth == 8 || curMonth == 10 || curMonth == 12) {
-            if (curMonth == 12 && curDay == 31) {
-                curMonth = 1;
-                curDay = 1;
-                curYear++;
-            }
-            if (curDay <= 30 && curDay >= 1) {
-                curDay++;
-            } else {
-                curDay = 1;
-                curMonth++;
-            }
-        } else {
-            if (curDay <= 29 && curDay >= 1) {
-                curDay++;
-            } else {
-                curDay = 1;
-                curMonth++;
-            }
-        }
+        ArrayList<String> fileInfo = this.readFileReverse();
+        this.counter++;
+        String[] date = fileInfo.get(this.counter).substring(0, 10).split("/");
+        curYear = Integer.parseInt(date[2]);
+        curMonth = Integer.parseInt(date[0]);
+        curDay = Integer.parseInt(date[1]);
+        //System.out.println(curMonth + "/" + curDay + "/" + curYear);
+//        // 2017 11 20
+//        if (curMonth == 2) {
+//            // no Feb 29 in our data
+//            if (curDay <= 27 && curDay >= 1) {
+//                curDay++;
+//            } else {
+//                curDay = 1;
+//                curMonth++;
+//            }
+//        } else if (curMonth == 1 || curMonth == 3 || curMonth == 5 || curMonth == 7 || curMonth == 8 || curMonth == 10 || curMonth == 12) {
+//            if (curMonth == 12 && curDay == 31) {
+//                curMonth = 1;
+//                curDay = 1;
+//                curYear++;
+//            }
+//            if (curDay <= 30 && curDay >= 1) {
+//                curDay++;
+//            } else {
+//                curDay = 1;
+//                curMonth++;
+//            }
+//        } else {
+//            if (curDay <= 29 && curDay >= 1) {
+//                curDay++;
+//            } else {
+//                curDay = 1;
+//                curMonth++;
+//            }
+//        }
     }
 }

@@ -2,11 +2,26 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="33eafcbf-f82e-4c0f-bcf4-1ab4ffb9491b" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/CSC207-Project.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Command/Command.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Command/buyCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Command/sellCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Stonks.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Amazon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/src/Amazon.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Apple.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/src/Apple.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Iterator/IterableCollection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Iterator/IterableCollection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Iterator/Iterator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Iterator/Iterator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Iterator/ReadFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Iterator/ReadFile.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Iterator/ReadFileCollection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Iterator/ReadFileCollection.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Iterator/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Iterator/Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Meta.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/src/Meta.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Microsoft.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/src/Microsoft.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/StarBucks.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/src/StarBucks.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/StocksData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/src/StocksData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Tesla.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/src/Tesla.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/src/User.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,9 +38,6 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/src/Main.java" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />

@@ -10,6 +10,7 @@ public class User {
     private String userID;
 
     private double ROI;
+
     public User(String name, String userID) {
         this.name = name;
         this.userID = userID;
@@ -29,8 +30,7 @@ public class User {
                 stocksOwned.put(stock, new ArrayList<>());
                 stocksOwned.get(stock).add(data);
             }
-        }
-        else {
+        } else {
             System.out.println("Insufficient funds");
         }
     }
@@ -75,6 +75,7 @@ public class User {
         }
         return currROI;
     }
+
     public void addBalance(double amount) {
         balance += amount;
     }

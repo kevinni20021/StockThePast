@@ -1,14 +1,17 @@
 package Command;
 
-public class buyCommand implements Command {
-    private Stock stock;
+import src.StocksData;
+import src.User;
 
-    public void buyStock(Stock stock) {
-        this.stock = stock;
+public class buyCommand implements Command {
+
+    private User user;
+
+    public buyCommand(User user) {
+        this.user = user;
     }
 
-    public void execute() {
-        stock.buy();
-
+    public void execute(StocksData stock, double amount, String date) {
+        user.buyStocks(stock, amount, date);
     }
 }

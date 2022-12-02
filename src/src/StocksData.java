@@ -1,9 +1,11 @@
 package src;
 
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.HashMap;
 
-abstract class StocksData {
+public abstract class StocksData {
     private final HashMap<String, Double> data;
 
     public StocksData() throws IOException {

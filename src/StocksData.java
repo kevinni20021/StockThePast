@@ -8,7 +8,7 @@ abstract class StocksData {
 
     public StocksData() throws IOException {
         this.data = new HashMap<>();
-        BufferedReader file = new BufferedReader(new FileReader("./stocksdata/" + getName() + ".csv"));
+        BufferedReader file = new BufferedReader(new FileReader("./Stocks Data/" + getName() + ".csv"));
         file.readLine();
         String line;
         while ((line = file.readLine()) != null) {

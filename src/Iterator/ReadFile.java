@@ -1,10 +1,11 @@
 package Iterator;
 
+
 import java.util.*;
 import java.io.*;
 
 
-public class ReadFile {
+public class ReadFile implements Iterator{
 
     // This class is responsible for looping through the given files
     private String fileName;
@@ -96,4 +97,12 @@ public class ReadFile {
 
     }
 
+    @Override
+    public boolean hasNexyDay() {
+        return false;
+    }
+    @Override
+    public void getNextDay() {
+
+    }
 }

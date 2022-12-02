@@ -78,4 +78,7 @@ public class User {
     public void addBalance(double amount) {
         balance += amount;
     }
+    public void setName(String name) {
+        this.name = name;
+    }
 }

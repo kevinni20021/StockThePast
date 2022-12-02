@@ -1,15 +1,17 @@
 package Command;
 
+import src.StocksData;
+import src.User;
+
 public class sellCommand implements Command {
 
-    private Stock stock;
+    private User user;
 
-    public void sellStock(Stock stock) {
-        this.stock = stock;
+    public sellCommand(User user) {
+        this.user = user;
     }
 
-    public void execute() {
-        stock.sell();
-
+    public void execute(StocksData stock, double amount, String date) {
+        user.buyStocks(stock, amount, date);
     }
 }

@@ -1,5 +1,5 @@
 package Iterator;
 
 public interface IterableCollection {
-    public Iterator createIterator();
+    public ReadFile createIterator();
 }

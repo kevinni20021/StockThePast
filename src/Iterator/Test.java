@@ -4,7 +4,6 @@ import java.util.*;
 import java.io.*;
 public class Test {
     public static void main(String[] args) {
-        System.out.println("Fuck CSC207 and CSC236");
 //        ReadFile read = new ReadFile("C:\\Users\\CGOD\\Desktop\\University\\Second year\\First Semester\\CSC207\\StockThePast\\Stocks Data\\Amazon.csv");
 //        ReadFile read = new ReadFile("C:\\Users\\CGOD\\Desktop\\University\\Second year\\First Semester\\CSC207\\StockThePast\\Stocks Data\\Apple.csv");
 //        ReadFile read = new ReadFile("C:\\Users\\CGOD\\Desktop\\University\\Second year\\First Semester\\CSC207\\StockThePast\\Stocks Data\\Meta.csv");
@@ -13,7 +12,9 @@ public class Test {
 //        ReadFile read = new ReadFile("C:\\Users\\CGOD\\Desktop\\University\\Second year\\First Semester\\CSC207\\StockThePast\\Stocks Data\\Tesla.csv");
 
         ReadFile read = new ReadFile("C:\\Users\\mingm\\Desktop\\University\\Second year\\First Semester\\CSC207\\StockThePast\\Stocks Data\\Apple.csv");
-//        "C:\\Users\\mingm\\Desktop\\University\\Second year\\First Semester\\CSC207\\StockThePast\\Stocks Data\\"
+        ReadFileCollection rFile = new ReadFileCollection("C:\\Users\\mingm\\Desktop\\University\\Second year\\First Semester\\CSC207\\StockThePast\\Stocks Data\\Apple.csv");
+        ReadFile temp = rFile.createIterator();
+        //        "C:\\Users\\mingm\\Desktop\\University\\Second year\\First Semester\\CSC207\\StockThePast\\Stocks Data\\"
 //        for (String line: read.readFile()) {
 //            System.out.println(line);
 //        }
@@ -23,10 +24,11 @@ public class Test {
 //        for (Map.Entry<String,ArrayList<String>> entry : read.organizeFileInfo().entrySet()) {
 //            System.out.println("Key = " + entry.getKey() + ", Value = " + entry.getValue());
 //        }
-        for (Map.Entry<String,ArrayList<String>> entry : read.organizeFileInfo().entrySet()) {
-            System.out.println("Key = " + entry.getKey() + ", Value for that key = " + read.dayInfo(entry.getKey()));
-        }
-
+//        for (Map.Entry<String,ArrayList<String>> entry : temp.organizeFileInfo().entrySet()) {
+//            System.out.println("Key = " + entry.getKey() + ", Value for that key = " + read.dayInfo(entry.getKey()));
+//        }
+        String a = "01";
+        System.out.println(Integer.parseInt(a));
 
     }
 }

@@ -24,6 +24,7 @@ public class Main {
 //        test.createAccount("Kevin", "1234");
 //        test.logout();
 //        test.login("Kevin", "1234");
+        StocksView
     }
 
 }

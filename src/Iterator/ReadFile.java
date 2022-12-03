@@ -97,6 +97,16 @@ public class ReadFile implements Iterator{
         values.put("Low", this.organizeFileInfo().get(temp).get(4));
         return values;
     }
+    public Map<String, String> dayInfo(String date) {
+        Map<String, String> values = new HashMap<>();
+        //Date,Close/Last,Volume,Open,High,Low
+        values.put("Close/Last", this.organizeFileInfo().get(date).get(0));
+        values.put("Volume", this.organizeFileInfo().get(date).get(1));
+        values.put("Open", this.organizeFileInfo().get(date).get(2));
+        values.put("High", this.organizeFileInfo().get(date).get(3));
+        values.put("Low", this.organizeFileInfo().get(date).get(4));
+        return values;
+    }
 
     @Override
     public boolean hasNexyDay() {

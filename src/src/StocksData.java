@@ -4,24 +4,22 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.HashMap;
+import Iterator.ReadFile;
 
 public abstract class StocksData {
-    private final HashMap<String, Double> data;
+    //private final HashMap<String, Double> data;
+    private ReadFile read;
 
     public StocksData() throws IOException {
-        this.data = new HashMap<>();
-        BufferedReader file = new BufferedReader(new FileReader("./stocksdata/" + getName() + ".csv"));
-        file.readLine();
-        String line;
-        while ((line = file.readLine()) != null) {
-            String[] curr = line.split(",");
-            data.put(curr[0], Double.parseDouble(curr[1].substring(1)));
-        }
+        //read = new ReadFile("C:\\Users\\CGOD\\Desktop\\University\\Second year\\First Semester\\CSC207\\StockThePast\\Stocks Data\\" + getName() + ".csv");
+        read = new ReadFile("./Stocks Data/" + getName() + ".csv");
+
+//        }
     }
 
     public abstract String getName();
 
     public double getPrice(String date) {
-        return data.get(date);
+        return Double.parseDouble(read.dayInfo(date).get("Close/Last").substring(1));
     }
 }

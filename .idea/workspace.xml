@@ -5,12 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="33eafcbf-f82e-4c0f-bcf4-1ab4ffb9491b" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Iterator/IterableCollection.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/LoginSystem/Account.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LoginSystem/Account.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/LoginSystem/AccountManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LoginSystem/AccountManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/LoginSystem/LoginSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LoginSystem/LoginSystem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/User.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,7 +51,20 @@
       <recent name="C:\Users\kevin\OneDrive\Desktop\UofTears\CSC207-Project\StockThePast\src" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main (1)">
+  <component name="RunManager" selected="Application.Iterator.Test">
+    <configuration name="Iterator.Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Iterator.Test" />
+      <module name="StockThePast" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Iterator.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Main (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="src.Main" />
       <module name="StockThePast" />
@@ -85,6 +94,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Iterator.Test" />
         <item itemvalue="Application.Main (1)" />
         <item itemvalue="Application.Main" />
       </list>
@@ -118,7 +128,7 @@
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/Main.java</url>
           <line>6</line>
-          <properties class="src.Main" method="main">
+          <properties class="src.Main">
             <option name="EMULATED" value="true" />
           </properties>
           <option name="timeStamp" value="1" />

@@ -1,27 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="33eafcbf-f82e-4c0f-bcf4-1ab4ffb9491b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/CSC207-Project.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Command/Command.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Command/buyCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Command/sellCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Stonks.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Amazon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/src/Amazon.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Apple.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/src/Apple.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Iterator/IterableCollection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Iterator/IterableCollection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Iterator/Iterator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Iterator/Iterator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Iterator/ReadFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Iterator/ReadFile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Iterator/ReadFileCollection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Iterator/ReadFileCollection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Iterator/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Iterator/Test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Meta.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/src/Meta.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Microsoft.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/src/Microsoft.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/StarBucks.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/src/StarBucks.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/StocksData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/src/StocksData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Tesla.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/src/Tesla.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/src/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/LoginSystem/Account.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LoginSystem/Account.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/LoginSystem/AccountManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LoginSystem/AccountManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/LoginSystem/LoginSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LoginSystem/LoginSystem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/User.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,7 +20,6 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="package-info" />
         <option value="Class" />
       </list>
     </option>
@@ -39,8 +27,13 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="MarkdownSettingsMigration">
-    <option name="stateVersion" value="1" />
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="ProjectId" id="2HxnAB7dvLGtwUmUSm5VSJuzZU5" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -62,20 +55,13 @@
       <recent name="C:\Users\kevin\OneDrive\Desktop\UofTears\CSC207-Project\StockThePast\src" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Iterator.Test">
-    <configuration name="Book" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Book" />
-      <module name="StockThePast" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Iterator.Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Iterator.Test" />
+  <component name="RunManager" selected="Application.Main (1)">
+    <configuration name="Main (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="src.Main" />
       <module name="StockThePast" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="Iterator.*" />
+          <option name="PATTERN" value="src.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -99,9 +85,7 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Iterator.Test" />
-        <item itemvalue="Application.Test" />
-        <item itemvalue="Application.Book" />
+        <item itemvalue="Application.Main (1)" />
         <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
@@ -127,5 +111,19 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/Main.java</url>
+          <line>6</line>
+          <properties class="src.Main" method="main">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

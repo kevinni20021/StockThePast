@@ -1,3 +1,4 @@
+package views;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.event.EventHandler;
@@ -21,14 +22,11 @@ public class StockView {
 
     Stage stage;
 
-    Button startButton, stopButton, loadButton, saveButton, newButton; //buttons for functions
-    Label scoreLabel = new Label("");
-    Label gameModeLabel = new Label("");
-
     BorderPane borderPane;
     Canvas canvas;
     GraphicsContext gc; //the graphics context will be linked to the canvas
 
+    //Will start on the login page
     public StockView(Stage stage) {
         this.stage = stage;
         initUI();
@@ -39,11 +37,11 @@ public class StockView {
         borderPane = new BorderPane();
         borderPane.setStyle("-fx-background-color: #121212;");
 
-        canvas = new Canvas(1000, 1000);
+        canvas = new Canvas(500, 500);
         canvas.setId("Canvas");
         gc = canvas.getGraphicsContext2D();
 
-        var scene = new Scene(borderPane, 800, 800);
+        Scene scene = new Scene(borderPane, 500, 500);
         this.stage.setScene(scene);
         this.stage.show();
     }

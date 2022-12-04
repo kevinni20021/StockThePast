@@ -5,8 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="33eafcbf-f82e-4c0f-bcf4-1ab4ffb9491b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Iterator/IterableCollection.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/StockApp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/views/CreateAccView.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/views/LoginView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/StockThePast.iml" beforeDir="false" afterPath="$PROJECT_DIR$/StockThePast.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/StockView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/StockView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/src/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,27 +37,32 @@
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
   </component>
+  <component name="GithubProjectSettings">
+    <option name="branchProtectionPatterns">
+      <list>
+        <option value="issue-id\/name" />
+      </list>
+    </option>
+  </component>
   <component name="ProjectId" id="2HxnAB7dvLGtwUmUSm5VSJuzZU5" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/CGOD/Desktop/University/Second year/First Semester/CSC207/Projects&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;
-  }
-}</component>
+  <component name="PropertiesComponent">
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Java/javafx-sdk-19/lib/javafx.web.jar" />
+    <property name="project.structure.last.edited" value="Global Libraries" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+  </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\kevin\OneDrive\Desktop\UofTears\CSC207-Project\StockThePast\Stocks Data" />
       <recent name="C:\Users\kevin\OneDrive\Desktop\UofTears\CSC207-Project\StockThePast\src" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Iterator.Test">
+  <component name="RunManager" selected="Application.StockApp">
     <configuration name="Iterator.Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Iterator.Test" />
       <module name="StockThePast" />
@@ -85,6 +96,14 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="StockApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="StockApp" />
+      <module name="StockThePast" />
+      <option name="VM_PARAMETERS" value="--module-path &quot;C:\Users\kevin\OneDrive\Desktop\Java\javafx-sdk-19\lib&quot; --add-modules javafx.controls,javafx.fxml " />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Test" />
       <module name="StockThePast" />
@@ -92,11 +111,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Application.Iterator.Test" />
+      <item itemvalue="Application.Main" />
+      <item itemvalue="Application.Main (1)" />
+      <item itemvalue="Application.Test" />
+      <item itemvalue="Application.StockApp" />
+    </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.StockApp" />
+        <item itemvalue="Application.Main" />
         <item itemvalue="Application.Iterator.Test" />
         <item itemvalue="Application.Main (1)" />
-        <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
   </component>
@@ -121,19 +148,6 @@
         </entry>
       </map>
     </option>
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/Main.java</url>
-          <line>6</line>
-          <properties class="src.Main">
-            <option name="EMULATED" value="true" />
-          </properties>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>

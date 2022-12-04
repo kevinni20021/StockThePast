@@ -69,6 +69,7 @@ public class StockView {
         createAccountButton.setPrefSize(buttonLength, buttonWidth);
         createAccountButton.setFont(new Font(fontSizeDefault));
         createAccountButton.setStyle("-fx-background-color: #17871b; -fx-text-fill: white;");
+        createAccountButton.setOnAction(e -> newCreateAccView());
 
         //Username and password fields
         usernameField.setMaxWidth(400);
@@ -93,12 +94,15 @@ public class StockView {
         errorLabel.setStyle("-fx-text-fill: #e8e6e3;");
         errorLabel.setFont(new Font(fontSizeDefault));
 
+        //temporary will add in backend later
+        errorLabel.setText("Login System on Maintenence");
 
         //Aliignment for buttons and text fields
         HBox loginSystemButtons = new HBox(100, loginButton, createAccountButton);
         loginSystemButtons.setAlignment(Pos.CENTER);
 
-        VBox loginPage = new VBox(10, title, errorLabel, usernameField, passwordField, loginSystemButtons);
+        //Allignment for the entire page
+        VBox loginPage = new VBox(10, title, usernameField, passwordField, loginSystemButtons, errorLabel);
         loginPage.setAlignment(Pos.CENTER);
         borderPane.setCenter(loginPage);
 
@@ -109,5 +113,9 @@ public class StockView {
         Scene scene = new Scene(borderPane, 500, 500);
         this.stage.setScene(scene);
         this.stage.show();
+    }
+
+    private void newCreateAccView() {
+        CreateAccView createAccView = new CreateAccView(this);
     }
 }

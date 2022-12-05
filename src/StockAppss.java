@@ -3,7 +3,7 @@ import javafx.application.Application;
 import javafx.stage.Stage;
 import StockView.UserView;
 
-public class StockApp extends Application {
+public class StockAppss extends Application {
 
     UserView view;
 

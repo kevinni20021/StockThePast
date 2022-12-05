@@ -157,10 +157,9 @@ public class StockView {
         //Allignment for buttons and text fields for create account
         HBox createAccountButtons = new HBox(100, backButton, createButton);
         createAccountButtons.setAlignment(Pos.CENTER);
+
         //Allignment for the entire login page
         VBox loginPage = new VBox(10, title, usernameField, passwordField, loginSystemButtons, errorLabel);
-        loginPage.setAlignment(Pos.CENTER);
-        borderPane.setCenter(loginPage);
 
         //Allignment for the entire createa account page
         VBox createPage = new VBox(10, createTitle, newusernameField, newpasswordField, confirmpasswordField, createAccountButtons, createAccountError);
@@ -210,7 +209,7 @@ public class StockView {
         String confirmpassword = this.confirmpasswordField.getText();
         String newusername = this.newusernameField.getText();
         if (!Objects.equals(newpassword, confirmpassword)){
-            this.createAccountError.setText("passwords do not match");
+            this.createAccountError.setText("Passwords do not match, please try again");
         } else {
             this.loginSystem.createAccount(newusername,newpassword);
         }

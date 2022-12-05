@@ -1,4 +1,5 @@
 package views;
+import LoginSystem.LoginSystem;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.event.EventHandler;
@@ -18,9 +19,12 @@ import javafx.scene.text.Font;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
+import java.util.Objects;
+
 public class StockView {
 
     Stage stage;
+    LoginSystem loginSystem;
 
     Button loginButton, createAccountButton, createButton, backButton;
     BorderPane borderPane;
@@ -39,7 +43,7 @@ public class StockView {
     //Titles
     private Label title = new Label(String.format("Welcome to Stock The Past"));
     //I got lazy
-    private Label createTitle = new Label(String.format("Welcome to Stock The Past"));
+    private Label createTitle = new Label(String.format("Create New Account"));
 
     //TextFields
     private TextField usernameField = new TextField("");
@@ -51,8 +55,9 @@ public class StockView {
     private PasswordField confirmpasswordField = new PasswordField();
 
     //Will start on the login page
-    public StockView(Stage stage) {
+    public StockView(Stage stage, LoginSystem loginSystem) {
         this.stage = stage;
+        this.loginSystem = loginSystem;
         initUI();
     }
 
@@ -79,13 +84,13 @@ public class StockView {
         usernameField.setMaxWidth(400);
         usernameField.setId("usernameField");
         usernameField.setPromptText("Enter Username");
-        usernameField.setStyle("-fx-text-fill: #e8e6e3;");
+        usernameField.setStyle("-fx-text-fill: #e8e6e3; -fx-text-fill: black;");
         usernameField.setFont(new Font(fontSizeDefault));
 
         passwordField.setMaxWidth(400);
         passwordField.setId("passwordField");
         passwordField.setPromptText("Enter Password");
-        passwordField.setStyle("-fx-text-fill: #e8e6e3;");
+        passwordField.setStyle("-fx-text-fill: #e8e6e3; -fx-text-fill: black;");
         passwordField.setFont(new Font(fontSizeDefault));
 
         //Create Account Page Stuff
@@ -95,19 +100,19 @@ public class StockView {
         newpasswordField.setId("newpasswordField");
         newpasswordField.setPromptText("New Password");
         newpasswordField.setMaxWidth(400);
-        newpasswordField.setStyle("-fx-text-fill: #e8e6e3;");
+        newpasswordField.setStyle("-fx-text-fill: #e8e6e3; -fx-text-fill: black;");
         newpasswordField.setFont(new Font(fontSizeDefault));
 
         newusernameField.setId("newusernameField");
         newusernameField.setPromptText("New Username");
         newusernameField.setMaxWidth(400);
-        newusernameField.setStyle("-fx-text-fill: #e8e6e3;");
+        newusernameField.setStyle("-fx-text-fill: #e8e6e3; -fx-text-fill: black;");
         newusernameField.setFont(new Font(fontSizeDefault));
 
         confirmpasswordField.setId("confirmpasswordField");
         confirmpasswordField.setPromptText("Confirm Password");
         confirmpasswordField.setMaxWidth(400);
-        confirmpasswordField.setStyle("-fx-text-fill: #e8e6e3;");
+        confirmpasswordField.setStyle("-fx-text-fill: #e8e6e3; -fx-text-fill: black;");
         confirmpasswordField.setFont(new Font(fontSizeDefault));
 
         createButton = new Button("Create");
@@ -131,7 +136,7 @@ public class StockView {
         createTitle.setId("title");
         createTitle.setFont(new Font(30));
         createTitle.setStyle("-fx-text-fill: white;");
-        createTitle.setText("Welcome to Stock the Past");
+        createTitle.setText("Create New Account");
 
         errorLabel.setId("error");
         errorLabel.setStyle("-fx-text-fill: #e8e6e3;");
@@ -166,6 +171,8 @@ public class StockView {
         //What buttons do
         createAccountButton.setOnAction(e -> CreateAccView(createPage, loginPage));
         backButton.setOnAction(e -> loginView(createPage, loginPage));
+        createButton.setOnAction(e -> createAccount());
+        loginButton.setOnAction(e -> loginAccount());
 
         canvas = new Canvas(500, 500);
         canvas.setId("Canvas");
@@ -192,4 +199,20 @@ public class StockView {
     }
 
     //Backend methods go here
+    private void loginAccount(){
+        String password = this.usernameField.getText();
+        String username = this.passwordField.getText();
+        this.loginSystem.login(username, password);
+    }
+
+    private void createAccount(){
+        String newpassword = this.newpasswordField.getText();
+        String confirmpassword = this.confirmpasswordField.getText();
+        String newusername = this.newusernameField.getText();
+        if (!Objects.equals(newpassword, confirmpassword)){
+            this.createAccountError.setText("passwords do not match");
+        } else {
+            this.loginSystem.createAccount(newusername,newpassword);
+        }
+    }
 }

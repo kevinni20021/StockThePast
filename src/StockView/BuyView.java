@@ -21,6 +21,8 @@ public class BuyView {
     private Label selectStockLabel;
     private Button selectStockButton;
     private ListView<String> stocksList;
+
+    private StockFactory stockFactory = new StockFactory();
     private Label amountLabel = new Label(String.format("Enter the amount of stocks you want to buy"));
     private TextField amount = new TextField("");
 
@@ -43,12 +45,12 @@ public class BuyView {
         stocksList.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
 
         try {
-            stocksList.getItems().add("Amazon" + " = " + getStock("Amazon").getPrice(date));
-            stocksList.getItems().add("Apple" + " = " + getStock("Apple").getPrice(date));
-            stocksList.getItems().add("Meta" + " = " + getStock("Meta").getPrice(date));
-            stocksList.getItems().add("Microsoft" + " = " + getStock("Microsoft").getPrice(date));
-            stocksList.getItems().add("StarBucks" + " = " + getStock("StarBucks").getPrice(date));
-            stocksList.getItems().add("Tesla" + " = " + getStock("Tesla").getPrice(date));
+            stocksList.getItems().add("Amazon" + " = " + stockFactory.getStock("Amazon").getPrice(date));
+            stocksList.getItems().add("Apple" + " = " + stockFactory.getStock("Apple").getPrice(date));
+            stocksList.getItems().add("Meta" + " = " + stockFactory.getStock("Meta").getPrice(date));
+            stocksList.getItems().add("Microsoft" + " = " + stockFactory.getStock("Microsoft").getPrice(date));
+            stocksList.getItems().add("StarBucks" + " = " + stockFactory.getStock("StarBucks").getPrice(date));
+            stocksList.getItems().add("Tesla" + " = " + stockFactory.getStock("Tesla").getPrice(date));
         } catch (IOException ex) {
             throw new RuntimeException(ex);
         }
@@ -61,7 +63,7 @@ public class BuyView {
             try {
                 int index = stocksList.getSelectionModel().getSelectedItem().indexOf(" ");
                 String name = stocksList.getSelectionModel().getSelectedItem().substring(0, index);
-                StocksData stock = getStock(name);
+                StocksData stock = stockFactory.getStock(name);
                 buy.execute(stock, Double.parseDouble(amount.getText()), date);
                 if (user.getStatus()) {
                     buyLabel.setText("Stocks Successfully Bought!");
@@ -104,17 +106,5 @@ public class BuyView {
         Scene dialogScene = new Scene(dialogVbox, 400, 400);
         dialog.setScene(dialogScene);
         dialog.show();
-    }
-
-    public StocksData getStock(String name) throws IOException {
-        return switch (name) {
-            case "Amazon" -> new Amazon();
-            case "Apple" -> new Apple();
-            case "Meta" -> new Meta();
-            case "Microsoft" -> new Microsoft();
-            case "StarBucks" -> new StarBucks();
-            case "Tesla" -> new Tesla();
-            default -> null;
-        };
     }
 }

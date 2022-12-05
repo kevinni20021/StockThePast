@@ -1,6 +1,7 @@
 package StockView;
 
 import Iterator.ReadFile;
+import Stocks.*;
 import javafx.scene.Group;
 import javafx.scene.chart.CategoryAxis;
 import javafx.scene.chart.LineChart;
@@ -19,7 +20,7 @@ import javafx.scene.layout.HBox;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
 
-import java.util.HashMap;
+import java.io.IOException;
 
 public class UserView {
 
@@ -29,6 +30,7 @@ public class UserView {
 
     public ReadFile date;
 
+    StockFactory stockFactory = new StockFactory();
     Button addButton, buyButton, sellButton, ROIButton, historyButton, nextButton;
 
     Label balanceLabel = new Label();
@@ -37,6 +39,18 @@ public class UserView {
     BorderPane borderPane;
 
     Stage stage;
+
+    XYChart.Series<String, Number> graphAmazon = new XYChart.Series<>();
+
+    XYChart.Series<String, Number> graphApple = new XYChart.Series<>();
+
+    XYChart.Series<String, Number> graphMeta = new XYChart.Series<>();
+
+    XYChart.Series<String, Number> graphMicrosoft = new XYChart.Series<>();
+
+    XYChart.Series<String, Number> graphStarBucks = new XYChart.Series<>();
+
+    XYChart.Series<String, Number> graphTesla = new XYChart.Series<>();
 
     public UserView(User user, Stage primaryStage) {
         this.user = user;
@@ -114,6 +128,7 @@ public class UserView {
         nextButton.setOnAction(e -> {
             date.getNextDay();
             dateLabel.setText("Date: " + date.getCurrDay());
+            nextDay();
             borderPane.requestFocus();
         });
 
@@ -142,70 +157,17 @@ public class UserView {
         y.setLabel("Price");
 
         LineChart<String, Number> line = new LineChart<String, Number>(x, y);
-        XYChart.Series<String, Number> Amazon = new XYChart.Series<>();
-        XYChart.Series<String, Number> Apple = new XYChart.Series<>();
-        XYChart.Series<String, Number> Meta = new XYChart.Series<>();
-        XYChart.Series<String, Number> Microsoft = new XYChart.Series<>();
-        XYChart.Series<String, Number> StarBucks = new XYChart.Series<>();
-        XYChart.Series<String, Number> Tesla = new XYChart.Series<>();
+        line.setPrefSize(1000, 600);
 
+        nextDay();
+        graphAmazon.setName("Amazon");
+        graphApple.setName("Apple");
+        graphMeta.setName("Meta");
+        graphMicrosoft.setName("Microsoft");
+        graphStarBucks.setName("StarBucks");
+        graphTesla.setName("Tesla");
 
-//        try {
-//            HashMap<String, HashMap<String, Double>> hack = user.stockDate(user);
-//            for (String key : hack.keySet()) {
-//                HashMap<String, Double> easy = new HashMap<String, Double>(hack.get(key));
-//                for (String keys : easy.keySet()) {
-//                    stock.getData().add(new XYChart.Data<String, Number>(keys, easy.get(keys)));
-//                }
-//            }
-//
-//            line.getData().add(stock);
-//            root.getChildren().add(line);
-//            stage.setScene(scene);
-//            stage.show();
-////
-////        }
-//        } catch (Exception e) {
-//            System.out.print("No such User.User\n");
-//        }
-
-        //Testing Purposes
-        HashMap<String, HashMap<String, Double>> hack = new HashMap<String, HashMap<String, Double>>();
-        hack.put("Stocks.Apple", new HashMap<String, Double>());
-        hack.get("Stocks.Apple").put("10/12/2022", 120.0);
-        hack.get("Stocks.Apple").put("10/13/2022", 120.0);
-        hack.put("Stocks.Meta", new HashMap<String, Double>());
-        hack.get("Stocks.Meta").put("11/12/2022", 1220.0);
-        hack.get("Stocks.Meta").put("11/13/2022", 15000.0);
-        for (String key : hack.keySet()) {
-            HashMap<String, Double> easy = new HashMap<String, Double>(hack.get(key));
-            for (String keys : easy.keySet()) {
-                if (key.equals("Stocks.Amazon")) {
-                    Amazon.getData().add(new XYChart.Data<String, Number>(keys, easy.get(keys)));
-                }
-                if (key.equals("Stocks.Apple")) {
-                    Apple.getData().add(new XYChart.Data<String, Number>(keys, easy.get(keys)));
-
-                }
-                if (key.equals("Stocks.Meta")) {
-                    Meta.getData().add(new XYChart.Data<String, Number>(keys, easy.get(keys)));
-                }
-                if (key.equals("Stocks.Microsoft")) {
-                    Microsoft.getData().add(new XYChart.Data<String, Number>(keys, easy.get(keys)));
-                }
-                if (key.equals("Stocks.StarBucks")) {
-                    StarBucks.getData().add(new XYChart.Data<String, Number>(keys, easy.get(keys)));
-                }
-                if (key.equals("Stocks.Tesla")) {
-                    Tesla.getData().add(new XYChart.Data<String, Number>(keys, easy.get(keys)));
-                }
-            }
-
-//        stock.getData().add(new XYChart.Data<String, Number>("10/05/2003", 120.00));
-//        stock.getData().add(new XYChart.Data<String, Number>("10/05/2004", 190.00));
-
-        }
-        line.getData().addAll(Amazon, Apple, Meta, Microsoft, StarBucks, Tesla);
+        line.getData().addAll(graphAmazon, graphApple, graphMeta, graphMicrosoft, graphStarBucks, graphTesla);
         root.getChildren().add(line);
 
         borderPane.setTop(controls);
@@ -214,6 +176,28 @@ public class UserView {
         Scene scene = new Scene(borderPane, 1000, 800);
         stage.setScene(scene);
         stage.show();
+    }
+
+    private void nextDay() {
+        try {
+            if (graphAmazon.getData().size() == 30) {
+                graphAmazon.getData().remove(0);
+                graphApple.getData().remove(0);
+                graphMeta.getData().remove(0);
+                graphMicrosoft.getData().remove(0);
+                graphStarBucks.getData().remove(0);
+                graphTesla.getData().remove(0);
+            }
+            graphAmazon.getData().add(new XYChart.Data<String, Number>(date.getCurrDay(), stockFactory.getStock("Amazon").getPrice(date.getCurrDay())));
+            graphApple.getData().add(new XYChart.Data<String, Number>(date.getCurrDay(), stockFactory.getStock("Apple").getPrice(date.getCurrDay())));
+            graphMeta.getData().add(new XYChart.Data<String, Number>(date.getCurrDay(), stockFactory.getStock("Meta").getPrice(date.getCurrDay())));
+            graphMicrosoft.getData().add(new XYChart.Data<String, Number>(date.getCurrDay(), stockFactory.getStock("Microsoft").getPrice(date.getCurrDay())));
+            graphStarBucks.getData().add(new XYChart.Data<String, Number>(date.getCurrDay(), stockFactory.getStock("StarBucks").getPrice(date.getCurrDay())));
+            graphTesla.getData().add(new XYChart.Data<String, Number>(date.getCurrDay(), stockFactory.getStock("Tesla").getPrice(date.getCurrDay())));
+        }
+        catch (IOException ex) {
+            throw new RuntimeException(ex);
+        }
     }
 
     private void createAddView() {AddView addView = new AddView(user, balanceLabel);}

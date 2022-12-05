@@ -61,7 +61,14 @@ public class ReadFile implements Iterator {
      * @return current date
      */
     public String getCurrDay() {
-        return curMonth + "/" + curDay + "/" + curYear;
+        String temp = curMonth + "/" + curDay + "/" + curYear;;
+        if (curMonth < 10) {
+            temp = "0" + temp;
+        }
+        if (curDay < 10) {
+            temp = temp.substring(0, 3) + "0" + temp.substring(3);
+        }
+        return temp;
     }
 
     /**

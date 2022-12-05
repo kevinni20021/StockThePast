@@ -83,8 +83,10 @@ public class User {
                 invested += (double) stockData.get(0) * (double) stockData.get(1);
                 totalReturn += (double) stockData.get(1);
             }
-            double ROI = totalReturn * stock.getPrice(date) - invested;
-            currROI.add(stock.getName() + " = " + Math.round(ROI * 100.0) / 100.0);
+            if (totalReturn > 0) {
+                double ROI = totalReturn * stock.getPrice(date) - invested;
+                currROI.add(stock.getName() + " = " + Math.round(ROI * 100.0) / 100.0);
+            }
         }
         return currROI;
     }

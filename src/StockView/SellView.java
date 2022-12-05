@@ -15,13 +15,14 @@ import Stocks.*;
 
 import java.io.IOException;
 import User.User;
-import java.util.ArrayList;
 
 
 public class SellView {
     private Label selectStockLabel;
     private Button selectStockButton;
     private ListView<String> stocksList;
+
+    private StockFactory stockFactory = new StockFactory();
     private Label amountLabel = new Label(String.format("Enter the amount of stocks you want to sell"));
     private TextField amount = new TextField("");
 
@@ -59,7 +60,7 @@ public class SellView {
             try {
                 int index = stocksList.getSelectionModel().getSelectedItem().indexOf(" ");
                 String name = stocksList.getSelectionModel().getSelectedItem().substring(0, index);
-                StocksData stock = getStock(name);
+                StocksData stock = stockFactory.getStock(name);
                 sell.execute(stock, Double.parseDouble(amount.getText()), date);
                 if (user.getStatus()) {
                     sellLabel.setText("Stocks Successfully Sold!");
@@ -102,17 +103,5 @@ public class SellView {
         Scene dialogScene = new Scene(dialogVbox, 400, 400);
         dialog.setScene(dialogScene);
         dialog.show();
-    }
-
-    public StocksData getStock(String name) throws IOException {
-        return switch (name) {
-            case "Amazon" -> new Amazon();
-            case "Apple" -> new Apple();
-            case "Meta" -> new Meta();
-            case "Microsoft" -> new Microsoft();
-            case "StarBucks" -> new StarBucks();
-            case "Tesla" -> new Tesla();
-            default -> null;
-        };
     }
 }

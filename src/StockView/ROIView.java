@@ -31,7 +31,7 @@ public class ROIView {
         stocksList.setId("stocksList");  // DO NOT MODIFY ID
         stocksList.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
 
-        for (String stock : user.getROI("11/18/2022")) {
+        for (String stock : user.getROI(date)) {
             stocksList.getItems().add(stock);
         }
 
@@ -43,7 +43,7 @@ public class ROIView {
         returnLabel.setStyle("-fx-text-fill: #e8e6e3;");
         returnLabel.setFont(new Font(16));
 
-        netWorth.setText("Net worth: " + user.getNW("11/18/2022"));
+        netWorth.setText("Net worth: " + user.getNW(date));
         netWorth.setId("amountLabel");
         netWorth.setStyle("-fx-text-fill: #e8e6e3;");
         netWorth.setFont(new Font(16));

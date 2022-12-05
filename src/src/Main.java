@@ -1,7 +1,8 @@
 package src;
 
-import java.io.IOException;
 import LoginSystem.LoginSystem;
+
+import java.io.IOException;
 
 public class Main {
     public static void main(String[] args) throws IOException {
@@ -16,14 +17,14 @@ public class Main {
         System.out.println(user.stocksOwned);
         System.out.println(user.getNW("11/18/2022"));
         System.out.println(user.getROI("11/18/2022"));
-//        LoginSystem test = new LoginSystem();
-//        test.login("Kevin", "123");
-//        test.createAccount("Kevin", "1234");
-//        test.login("Kevin", "1234");
-//        test.logout();
-//        test.createAccount("Kevin", "1234");
-//        test.logout();
-//        test.login("Kevin", "1234");
+        LoginSystem test = new LoginSystem();
+        test.login("Kevin", "123");
+        test.createAccount("Kevin", "1234");
+        test.login("Kevin", "1234");
+        test.logout();
+        test.createAccount("Kevin", "1234");
+        test.logout();
+        test.login("Kevin", "1234");
     }
 
 }

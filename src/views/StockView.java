@@ -57,7 +57,7 @@ public class StockView {
         borderPane = new BorderPane();
         borderPane.setStyle("-fx-background-color: #121212;");
 
-        //Colors, sizing and initializer for Login and Create account
+        //Colors, sizing and initializer for Login and Create account button
         loginButton = new Button("Login");
         loginButton.setId("Login");
         loginButton.setPrefSize(buttonLength, buttonWidth);

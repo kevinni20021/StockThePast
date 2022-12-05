@@ -20,7 +20,6 @@ public class Test {
 //            System.out.println("Key = " + entry.getKey() + ", Value for that key = " + temp.dayInfo(temp.curDay, temp.curMonth, temp.curYear));
 //        }
 
-
         while (temp.hasNexyDay()) {
             System.out.println(temp.curMonth + "/" + temp.curDay + "/" + temp.curYear);
             System.out.println("Value for that key = " + temp.dayInfo(temp.curDay, temp.curMonth, temp.curYear));
@@ -28,6 +27,9 @@ public class Test {
         }
         System.out.println(temp.curMonth + "/" + temp.curDay + "/" + temp.curYear);
         System.out.println("Value for that key = " + temp.dayInfo(temp.curDay, temp.curMonth, temp.curYear));
+//        temp.getLastDay();
+//        System.out.println(temp.curMonth + "/" + temp.curDay + "/" + temp.curYear);
+//        System.out.println("Value for that key = " + temp.dayInfo(temp.curDay, temp.curMonth, temp.curYear));
 
     }
 }

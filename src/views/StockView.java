@@ -22,7 +22,7 @@ public class StockView {
 
     Stage stage;
 
-    Button loginButton, createAccountButton;
+    Button loginButton, createAccountButton, createButton, backButton;
     BorderPane borderPane;
     Canvas canvas;
     GraphicsContext gc; //the graphics context will be linked to the canvas
@@ -34,17 +34,21 @@ public class StockView {
 
     //Error Label
     private Label errorLabel = new Label("");
+    private Label createAccountError = new Label("");
 
     //Titles
     private Label title = new Label(String.format("Welcome to Stock The Past"));
-
-    //Labels for username and password
-    Label username = new Label("Username");
-    Label password = new Label("Password");
+    //I got lazy
+    private Label createTitle = new Label(String.format("Welcome to Stock The Past"));
 
     //TextFields
     private TextField usernameField = new TextField("");
     private PasswordField passwordField = new PasswordField();
+
+    //TextField for username and password for create Account
+    private TextField newusernameField = new TextField("");
+    private PasswordField newpasswordField = new PasswordField();
+    private PasswordField confirmpasswordField = new PasswordField();
 
     //Will start on the login page
     public StockView(Stage stage) {
@@ -57,6 +61,7 @@ public class StockView {
         borderPane = new BorderPane();
         borderPane.setStyle("-fx-background-color: #121212;");
 
+        //Login Page stuff
         //Colors, sizing and initializer for Login and Create account button
         loginButton = new Button("Login");
         loginButton.setId("Login");
@@ -69,7 +74,6 @@ public class StockView {
         createAccountButton.setPrefSize(buttonLength, buttonWidth);
         createAccountButton.setFont(new Font(fontSizeDefault));
         createAccountButton.setStyle("-fx-background-color: #17871b; -fx-text-fill: white;");
-        createAccountButton.setOnAction(e -> newCreateAccView());
 
         //Username and password fields
         usernameField.setMaxWidth(400);
@@ -84,27 +88,84 @@ public class StockView {
         passwordField.setStyle("-fx-text-fill: #e8e6e3;");
         passwordField.setFont(new Font(fontSizeDefault));
 
+        //Create Account Page Stuff
+        //initialization for buttons and labels
+        createAccountError.setId("createAccountError");
+
+        newpasswordField.setId("newpasswordField");
+        newpasswordField.setPromptText("New Password");
+        newpasswordField.setMaxWidth(400);
+        newpasswordField.setStyle("-fx-text-fill: #e8e6e3;");
+        newpasswordField.setFont(new Font(fontSizeDefault));
+
+        newusernameField.setId("newusernameField");
+        newusernameField.setPromptText("New Username");
+        newusernameField.setMaxWidth(400);
+        newusernameField.setStyle("-fx-text-fill: #e8e6e3;");
+        newusernameField.setFont(new Font(fontSizeDefault));
+
+        confirmpasswordField.setId("confirmpasswordField");
+        confirmpasswordField.setPromptText("Confirm Password");
+        confirmpasswordField.setMaxWidth(400);
+        confirmpasswordField.setStyle("-fx-text-fill: #e8e6e3;");
+        confirmpasswordField.setFont(new Font(fontSizeDefault));
+
+        createButton = new Button("Create");
+        createButton.setId("Create Account");
+        createButton.setPrefSize(buttonLength, buttonWidth);
+        createButton.setFont(new Font(fontSizeDefault));
+        createButton.setStyle("-fx-background-color: #17871b; -fx-text-fill: white;");
+
+        backButton = new Button("Back");
+        backButton.setId("Back");
+        backButton.setPrefSize(buttonLength, buttonWidth);
+        backButton.setFont(new Font(fontSizeDefault));
+        backButton.setStyle("-fx-background-color: #17871b; -fx-text-fill: white;");
 
         //Title and other text init
         title.setId("title");
         title.setFont(new Font(30));
         title.setStyle("-fx-text-fill: white;");
+        title.setText("Welcome to Stock the Past");
+
+        createTitle.setId("title");
+        createTitle.setFont(new Font(30));
+        createTitle.setStyle("-fx-text-fill: white;");
+        createTitle.setText("Welcome to Stock the Past");
 
         errorLabel.setId("error");
         errorLabel.setStyle("-fx-text-fill: #e8e6e3;");
         errorLabel.setFont(new Font(fontSizeDefault));
 
+        createAccountError.setId("create error");
+        createAccountError.setStyle("-fx-text-fill: #e8e6e3;");
+        createAccountError.setFont(new Font(fontSizeDefault));
+
         //temporary will add in backend later
         errorLabel.setText("Login System on Maintenence");
+        createAccountError.setText("Login System on Maintenence");
 
-        //Aliignment for buttons and text fields
+        //Aliignment for buttons and text fields for login
         HBox loginSystemButtons = new HBox(100, loginButton, createAccountButton);
         loginSystemButtons.setAlignment(Pos.CENTER);
 
-        //Allignment for the entire page
+        //Allignment for buttons and text fields for create account
+        HBox createAccountButtons = new HBox(100, backButton, createButton);
+        createAccountButtons.setAlignment(Pos.CENTER);
+        //Allignment for the entire login page
         VBox loginPage = new VBox(10, title, usernameField, passwordField, loginSystemButtons, errorLabel);
         loginPage.setAlignment(Pos.CENTER);
         borderPane.setCenter(loginPage);
+
+        //Allignment for the entire createa account page
+        VBox createPage = new VBox(10, createTitle, newusernameField, newpasswordField, confirmpasswordField, createAccountButtons, createAccountError);
+
+        //Create Account page is invisible to start
+        loginView(createPage, loginPage);
+
+        //What buttons do
+        createAccountButton.setOnAction(e -> CreateAccView(createPage, loginPage));
+        backButton.setOnAction(e -> loginView(createPage, loginPage));
 
         canvas = new Canvas(500, 500);
         canvas.setId("Canvas");
@@ -115,7 +176,20 @@ public class StockView {
         this.stage.show();
     }
 
-    private void newCreateAccView() {
-        CreateAccView createAccView = new CreateAccView(this);
+    //Methods to switch views
+    private void CreateAccView(VBox createPage, VBox loginpage) {
+        loginpage.setVisible(false);
+        createPage.setVisible(true);
+        createPage.setAlignment(Pos.CENTER);
+        borderPane.setCenter(createPage);
     }
+
+    private void loginView(VBox createPage, VBox loginpage){
+        loginpage.setVisible(true);
+        createPage.setVisible(false);
+        loginpage.setAlignment(Pos.CENTER);
+        borderPane.setCenter(loginpage);
+    }
+
+    //Backend methods go here
 }

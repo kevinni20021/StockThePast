@@ -5,7 +5,7 @@ import java.io.*;
 public class Test {
     public static void main(String[] args) {
         String name = "Apple";
-        ReadFile read = new ReadFile("./Stocks Data/" + name + ".csv");
+        //ReadFile read = new ReadFile("./Stocks Data/" + name + ".csv");
         ReadFileCollection rFile = new ReadFileCollection("./Stocks Data/" + name + ".csv");
         ReadFile temp = rFile.createIterator();
 

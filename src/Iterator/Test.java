@@ -26,7 +26,6 @@ public class Test {
         }
         System.out.println(temp.curMonth + "/" + temp.curDay + "/" + temp.curYear);
         System.out.println("Value for that key = " + temp.dayInfo(temp.curDay, temp.curMonth, temp.curYear));
-
     }
 }
 

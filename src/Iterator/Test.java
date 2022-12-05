@@ -1,10 +1,12 @@
 package Iterator;
 
+import java.util.*;
+import java.io.*;
 public class Test {
     public static void main(String[] args) {
         String name = "Apple";
-        ReadFile read = new ReadFile("C:\\Users\\KAIXI\\IdeaProjects\\GroupProject\\CSC207-Project\\Stocks Data\\" + name + ".csv");
-        ReadFileCollection rFile = new ReadFileCollection("C:\\Users\\KAIXI\\IdeaProjects\\GroupProject\\CSC207-Project\\Stocks Data\\" + name + ".csv");
+        //ReadFile read = new ReadFile("./Stocks Data/" + name + ".csv");
+        ReadFileCollection rFile = new ReadFileCollection("./Stocks Data/" + name + ".csv");
         ReadFile temp = rFile.createIterator();
 
 
@@ -18,7 +20,6 @@ public class Test {
 //            System.out.println("Key = " + entry.getKey() + ", Value for that key = " + temp.dayInfo(temp.curDay, temp.curMonth, temp.curYear));
 //        }
 
-
         while (temp.hasNexyDay()) {
             System.out.println(temp.curMonth + "/" + temp.curDay + "/" + temp.curYear);
             System.out.println("Value for that key = " + temp.dayInfo(temp.curDay, temp.curMonth, temp.curYear));
@@ -26,6 +27,10 @@ public class Test {
         }
         System.out.println(temp.curMonth + "/" + temp.curDay + "/" + temp.curYear);
         System.out.println("Value for that key = " + temp.dayInfo(temp.curDay, temp.curMonth, temp.curYear));
+//        temp.getLastDay();
+//        System.out.println(temp.curMonth + "/" + temp.curDay + "/" + temp.curYear);
+//        System.out.println("Value for that key = " + temp.dayInfo(temp.curDay, temp.curMonth, temp.curYear));
+
     }
 }
 

@@ -15,9 +15,12 @@ public class ReadFile implements Iterator{
     public int curYear = 2017;
     private int counter = 0;
 
+    private ArrayList<String> fileInfo;
+
 
     public ReadFile(String fileName) {
         this.fileName = fileName;
+        this.fileInfo = this.readFileReverse();
     }
 
 
@@ -114,41 +117,23 @@ public class ReadFile implements Iterator{
     }
     @Override
     public void getNextDay() {
-        ArrayList<String> fileInfo = this.readFileReverse();
         this.counter++;
-        String[] date = fileInfo.get(this.counter).substring(0, 10).split("/");
+        String[] date = this.fileInfo.get(this.counter).substring(0, 10).split("/");
         curYear = Integer.parseInt(date[2]);
         curMonth = Integer.parseInt(date[0]);
         curDay = Integer.parseInt(date[1]);
-        //System.out.println(curMonth + "/" + curDay + "/" + curYear);
-//        // 2017 11 20
-//        if (curMonth == 2) {
-//            // no Feb 29 in our data
-//            if (curDay <= 27 && curDay >= 1) {
-//                curDay++;
-//            } else {
-//                curDay = 1;
-//                curMonth++;
-//            }
-//        } else if (curMonth == 1 || curMonth == 3 || curMonth == 5 || curMonth == 7 || curMonth == 8 || curMonth == 10 || curMonth == 12) {
-//            if (curMonth == 12 && curDay == 31) {
-//                curMonth = 1;
-//                curDay = 1;
-//                curYear++;
-//            }
-//            if (curDay <= 30 && curDay >= 1) {
-//                curDay++;
-//            } else {
-//                curDay = 1;
-//                curMonth++;
-//            }
-//        } else {
-//            if (curDay <= 29 && curDay >= 1) {
-//                curDay++;
-//            } else {
-//                curDay = 1;
-//                curMonth++;
-//            }
-//        }
+    }
+
+    public void getLastDay() {
+        if (curDay == 20 && curMonth == 11 && curYear == 2017) {
+            System.out.println("Today is the first day!");
+        } else {
+            this.counter--;
+            String[] date = this.fileInfo.get(this.counter).substring(0, 10).split("/");
+            curYear = Integer.parseInt(date[2]);
+            curMonth = Integer.parseInt(date[0]);
+            curDay = Integer.parseInt(date[1]);
+        }
+
     }
 }

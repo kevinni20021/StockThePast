@@ -79,7 +79,29 @@ public class User {
     public void addBalance(double amount) {
         balance += amount;
     }
+
     public void setName(String name) {
         this.name = name;
+    }
+
+    public HashMap<StocksData, ArrayList<ArrayList<Object>>> getStocksOwned() {
+        return this.stocksOwned;
+    }
+
+    // Returns a dictionary of stockname, then its date as the key and double as the value to graph
+    public HashMap<String, HashMap<String, Double>> stockDate(User user) {
+        // Want to get a dictionary of all the days for which the user owns the stock to graph their changes
+        HashMap<String, HashMap<String, Double>> hack = new HashMap<String, HashMap<String, Double>>();
+        for (StocksData stock : user.getStocksOwned().keySet()) {
+            for (ArrayList<Object> stockData : user.getStocksOwned().get(stock)) {
+                if (!hack.containsKey(stock.getName())) {
+                    hack.put(stock.getName(), new HashMap<String, Double>());
+                } else {
+                    hack.get(stock.getName()).put(stockData.get(2).toString(), (double) stockData.get(0));
+                }
+            }
+        }
+        System.out.println(hack);
+        return hack;
     }
 }

@@ -26,10 +26,11 @@ import java.rmi.server.ObjID;
 import java.util.*;
 
 //public class AccessibilityPage extends Application implements EventHandler<ActionEvent> {
-public class AccessibilityPage extends Application {
+public class AccessibilityPage{
 
     Button bigButton, defaultBbutton, smallButton;
 
+    Stage stage;
     BorderPane borderPane;
     public final int fontSizeSmall = 10;
     public final int fontSizeDefault = 20;
@@ -40,16 +41,17 @@ public class AccessibilityPage extends Application {
     private int buttonLength = 150;
     private int buttonWidth = 50;
 
-    public static void main(String[] args) {
-        launch(args);
+
+    public AccessibilityPage(Stage stage) {
+        this.stage = stage;
+        initUI();
     }
-    @Override
-    public void start(Stage primaryStage) throws Exception {
+    public void initUI() {
         borderPane = new BorderPane();
         borderPane.setStyle("-fx-background-color: #121212;");
 
         //naming the window
-        primaryStage.setTitle("Accessibility");
+        this.stage.setTitle("Accessibility");
 
         //creating the button
         defaultBbutton = new Button("Default");
@@ -89,8 +91,8 @@ public class AccessibilityPage extends Application {
 
         //setting the size for our window
         Scene scene = new Scene(borderPane, borderPaneLength, borderPaneWidth);
-        primaryStage.setScene(scene);
-        primaryStage.show();
+        this.stage.setScene(scene);
+        this.stage.show();
 
         defaultBbutton.setOnAction(e -> {
             System.out.println("Default");

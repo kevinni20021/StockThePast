@@ -1,6 +1,6 @@
 package Iterator;
 
 public interface Iterator {
-    boolean hasNexyDay();
+    boolean hasNextDay();
     void getNextDay();
 }

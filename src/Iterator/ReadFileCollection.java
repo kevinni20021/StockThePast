@@ -1,6 +1,6 @@
 package Iterator;
 
-public class ReadFileCollection implements IterableCollection{
+public class ReadFileCollection implements IterableCollection {
     private String fileName;
     public ReadFileCollection (String fileName) {
         this.fileName = fileName;

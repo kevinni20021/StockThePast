@@ -1,7 +1,7 @@
 package Command;
 
-import src.StocksData;
-import src.User;
+import Stocks.StocksData;
+import User.User;
 
 public class sellCommand implements Command {
 
@@ -12,6 +12,6 @@ public class sellCommand implements Command {
     }
 
     public void execute(StocksData stock, double amount, String date) {
-        user.buyStocks(stock, amount, date);
+        user.sellStocks(stock, amount, date);
     }
 }

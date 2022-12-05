@@ -8,14 +8,14 @@ public class AccountManager {
     private Account activeAccount;
 
     //take a snapshot of the current user state to save in accounts
-    //public User saveUserState {}
+    //public User.User saveUserState {}
     public AccountManager() {
         this.accounts = new HashMap<>();
     }
     //all print statements will be replaced with error codes in the future
     //Error code 0 means login successful
     //Error code 1 means Already logged in
-    //Error code 3 means User not in system
+    //Error code 3 means User.User not in system
     //Error code 2 means incorrect username or password
     public int login(String username, String password) {
         if (this.isCurrLoggedin()) {
@@ -35,7 +35,7 @@ public class AccountManager {
             }
         } else {
             return 3;
-            //System.out.println("User not in system, please create a new account");
+            //System.out.println("User.User not in system, please create a new account");
         }
     }
 
@@ -44,7 +44,7 @@ public class AccountManager {
             System.out.println("Username is taken");
         } else {
             HashMap<String, Account> passanduser = new HashMap<String, Account>();
-            passanduser.put(password, new Account(username, password)); //new Acoount(new User)
+            passanduser.put(password, new Account(username, password)); //new Acoount(new User.User)
             this.accounts.put(username, passanduser);
         }
     }

@@ -8,7 +8,7 @@ import javafx.scene.chart.LineChart;
 import javafx.scene.chart.NumberAxis;
 import javafx.scene.chart.XYChart;
 import javafx.stage.Stage;
-import src.User;
+import User.User;
 
 import java.util.HashMap;
 

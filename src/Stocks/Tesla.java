@@ -1,4 +1,6 @@
-package src;
+package Stocks;
+
+import Stocks.StocksData;
 
 import java.io.IOException;
 

@@ -10,7 +10,7 @@ public abstract class StocksData {
 
     public StocksData() throws IOException {
         //read = new ReadFile("C:\\Users\\CGOD\\Desktop\\University\\Second year\\First Semester\\CSC207\\StockThePast\\Stocks Data\\" + getName() + ".csv");
-        read = new ReadFile("C:\\Users\\KAIXI\\IdeaProjects\\GroupProject\\CSC207-Project\\Stocks Data\\" + getName() + ".csv");
+        read = new ReadFile("./Stocks Data/" + getName() + ".csv");
 
 //        }
     }

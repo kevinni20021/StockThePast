@@ -25,7 +25,7 @@ public class LoginSystem {
         this.accounts.createAccount(username, password);
     }
 
-    public void logout(){
+    public void logout() {
         this.accounts.logout();
     }
 }

@@ -1,10 +1,8 @@
 package src;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
-import java.util.HashMap;
 import Iterator.ReadFile;
+
+import java.io.IOException;
 
 public abstract class StocksData {
     //private final HashMap<String, Double> data;
@@ -12,7 +10,7 @@ public abstract class StocksData {
 
     public StocksData() throws IOException {
         //read = new ReadFile("C:\\Users\\CGOD\\Desktop\\University\\Second year\\First Semester\\CSC207\\StockThePast\\Stocks Data\\" + getName() + ".csv");
-        read = new ReadFile("./Stocks Data/" + getName() + ".csv");
+        read = new ReadFile("C:\\Users\\KAIXI\\IdeaProjects\\GroupProject\\CSC207-Project\\Stocks Data\\" + getName() + ".csv");
 
 //        }
     }

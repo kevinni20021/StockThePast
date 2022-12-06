@@ -4,10 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="33eafcbf-f82e-4c0f-bcf4-1ab4ffb9491b" name="Changes" comment="3.2.2 Integration complete">
+    <list default="true" id="33eafcbf-f82e-4c0f-bcf4-1ab4ffb9491b" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/LoginSystem/AccountManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LoginSystem/AccountManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/StockThePast.iml" beforeDir="false" afterPath="$PROJECT_DIR$/StockThePast.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Iterator/ReadFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Iterator/ReadFile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/AccessibilityView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/AccessibilityView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/AddView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/AddView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/BuyView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/BuyView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/HistoryView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/HistoryView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/ROIView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/ROIView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/SellView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/SellView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/views/StockView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/StockView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/UserView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/UserView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,19 +52,23 @@
       </list>
     </option>
   </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
   <component name="ProjectId" id="2HxnAB7dvLGtwUmUSm5VSJuzZU5" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="Git.Branch.Popup.ShowAllRemotes" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Java/javafx-sdk-19/lib" />
-    <property name="project.structure.last.edited" value="Global Libraries" />
-    <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
-  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "last_opened_file_path": "C:/Users/CGOD/Desktop/University/Second year/First Semester/CSC207/Projects",
+    "project.structure.last.edited": "Libraries",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2"
+  }
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\kevin\OneDrive\Desktop\UofTears\CSC207-Project\src" />
@@ -85,10 +97,18 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="StockApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="StockApp" />
+      <module name="StockThePast" />
+      <option name="VM_PARAMETERS" value="--module-path &quot;C:\Users\CGOD\Desktop\University\Second year\First Semester\CSC207\javafx-sdk-19\lib&quot; --add-modules javafx.controls,javafx.fxml" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="StockAppss" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="StockAppss" />
       <module name="StockThePast" />
-      <option name="VM_PARAMETERS" value="--module-path &quot;C:\Users\kevin\OneDrive\Desktop\Java\javafx-sdk-19\lib&quot; --add-modules javafx.controls,javafx.fxml" />
+      <option name="VM_PARAMETERS" value="--module-path &quot;C:\Users\CGOD\Desktop\University\Second year\First Semester\CSC207\javafx-sdk-19\lib&quot; --add-modules javafx.controls,javafx.fxml" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -101,6 +121,7 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="Application.StockApp" />
       <item itemvalue="Application.Main" />
       <item itemvalue="Application.Main (1)" />
       <item itemvalue="Application.Test" />
@@ -109,6 +130,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.StockAppss" />
+        <item itemvalue="Application.StockApp" />
         <item itemvalue="Application.Main (1)" />
         <item itemvalue="Application.Main" />
       </list>
@@ -157,7 +179,6 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Merged Main" />

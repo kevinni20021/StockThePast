@@ -27,6 +27,7 @@ public class SellView {
     private TextField amount = new TextField("");
 
     private Label sellLabel = new Label("");
+    public static double fontSize = 16;
 
     public SellView(User user, Label balanceLabel, String date) {
         Command sell = new sellCommand(user);
@@ -81,21 +82,25 @@ public class SellView {
 
         amountLabel.setId("amountLabel");
         amountLabel.setStyle("-fx-text-fill: #e8e6e3;");
-        amountLabel.setFont(new Font(16));
+        amountLabel.setFont(new Font(fontSize));
 
         amount.setId("amount");
         amount.setStyle("-fx-text-fill: #e8e6e3;");
-        amount.setFont(new Font(16));
+        amount.setFont(new Font(fontSize));
 
         selectStockLabel.setStyle("-fx-text-fill: #e8e6e3");
-        selectStockLabel.setFont(new Font(16));
+        selectStockLabel.setFont(new Font(fontSize));
 
         sellLabel.setStyle("-fx-text-fill: #e8e6e3;");
-        sellLabel.setFont(new Font(16));
+        sellLabel.setFont(new Font(fontSize));
 
         selectStockButton.setStyle("-fx-background-color: #17871b; -fx-text-fill: white;");
-        selectStockButton.setPrefSize(200, 50);
-        selectStockButton.setFont(new Font(16));
+        if (fontSize > 16) {
+            selectStockButton.setPrefSize(300, 50);
+        } else {
+            selectStockButton.setPrefSize(200, 50);
+        }
+        selectStockButton.setFont(new Font(fontSize));
 
         selectBoardBox.setAlignment(Pos.CENTER);
 
@@ -103,5 +108,13 @@ public class SellView {
         Scene dialogScene = new Scene(dialogVbox, 400, 400);
         dialog.setScene(dialogScene);
         dialog.show();
+    }
+
+
+    /**
+     * This is a setter method for setting the fontSize
+     */
+    public static void setFontSize(double size) {
+        SellView.fontSize = size;
     }
 }

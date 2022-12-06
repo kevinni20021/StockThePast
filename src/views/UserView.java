@@ -29,6 +29,7 @@ public class UserView {
     private TextField addBalanceTextField = new TextField("");
 
     public ReadFile date;
+    public static double fontSize = 16;
 
     StockFactory stockFactory = new StockFactory();
     Button addButton, buyButton, sellButton, ROIButton, historyButton, nextButton;
@@ -67,7 +68,7 @@ public class UserView {
         addButton = new Button("Add Balance");
         addButton.setId("AddBalance");
         addButton.setPrefSize(80, 50);
-        addButton.setFont(new Font(12));
+        addButton.setFont(new Font(fontSize));
         addButton.setStyle("-fx-background-color: #17871b; -fx-text-fill: white;");
 
         addButton.setOnAction(e -> {
@@ -78,7 +79,7 @@ public class UserView {
         buyButton = new Button("Buy");
         buyButton.setId("Buy");
         buyButton.setPrefSize(80, 50);
-        buyButton.setFont(new Font(12));
+        buyButton.setFont(new Font(fontSize));
         buyButton.setStyle("-fx-background-color: #17871b; -fx-text-fill: white;");
 
         buyButton.setOnAction(e -> {
@@ -89,7 +90,7 @@ public class UserView {
         sellButton = new Button("Sell");
         sellButton.setId("Sell");
         sellButton.setPrefSize(80, 50);
-        sellButton.setFont(new Font(12));
+        sellButton.setFont(new Font(fontSize));
         sellButton.setStyle("-fx-background-color: #17871b; -fx-text-fill: white;");
 
         sellButton.setOnAction(e -> {
@@ -100,7 +101,7 @@ public class UserView {
         ROIButton = new Button("ROI");
         ROIButton.setId("ROI");
         ROIButton.setPrefSize(80, 50);
-        ROIButton.setFont(new Font(12));
+        ROIButton.setFont(new Font(fontSize));
         ROIButton.setStyle("-fx-background-color: #17871b; -fx-text-fill: white;");
 
         ROIButton.setOnAction(e -> {
@@ -111,7 +112,7 @@ public class UserView {
         historyButton = new Button("History");
         historyButton.setId("History");
         historyButton.setPrefSize(80, 50);
-        historyButton.setFont(new Font(12));
+        historyButton.setFont(new Font(fontSize));
         historyButton.setStyle("-fx-background-color: #17871b; -fx-text-fill: white;");
 
         historyButton.setOnAction(e -> {
@@ -122,7 +123,7 @@ public class UserView {
         nextButton = new Button("Next Day");
         nextButton.setId("nextDay");
         nextButton.setPrefSize(80, 50);
-        nextButton.setFont(new Font(12));
+        nextButton.setFont(new Font(fontSize));
         nextButton.setStyle("-fx-background-color: #17871b; -fx-text-fill: white;");
 
         nextButton.setOnAction(e -> {
@@ -135,13 +136,13 @@ public class UserView {
         balanceLabel.setId("balanceLabel");
         balanceLabel.setText("Balance: " + user.getBalance());
         balanceLabel.setMinWidth(200);
-        balanceLabel.setFont(new Font(16));
+        balanceLabel.setFont(new Font(fontSize));
         balanceLabel.setStyle("-fx-background-color: #17871b; -fx-text-fill: white;");
 
         dateLabel.setId("dateLabel");
         dateLabel.setText("Date: " + date.getCurrDay());
         dateLabel.setMinWidth(125);
-        dateLabel.setFont(new Font(16));
+        dateLabel.setFont(new Font(fontSize));
         dateLabel.setStyle("-fx-background-color: #17871b; -fx-text-fill: white;");
 
         HBox controls = new HBox(20, dateLabel, balanceLabel, nextButton, addButton, buyButton, sellButton, ROIButton, historyButton);
@@ -199,6 +200,15 @@ public class UserView {
             throw new RuntimeException(ex);
         }
     }
+
+
+    /**
+     * This is a setter method for setting the fontSize
+     */
+    public static void setFontSize(double size) {
+        UserView.fontSize = size;
+    }
+
 
     private void createAddView() {AddView addView = new AddView(user, balanceLabel);}
 

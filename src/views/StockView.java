@@ -38,6 +38,7 @@ public class StockView {
     private TextField addBalanceTextField = new TextField("");
 
     public ReadFile date;
+    public static double fontSize = 16;
 
     StockFactory stockFactory = new StockFactory();
     Button addButton, buyButton, sellButton, ROIButton, historyButton, nextButton;
@@ -277,7 +278,7 @@ public class StockView {
         buyButton = new Button("Buy");
         buyButton.setId("Buy");
         buyButton.setPrefSize(80, 50);
-        buyButton.setFont(new Font(12));
+        buyButton.setFont(new Font(fontSize));
         buyButton.setStyle("-fx-background-color: #17871b; -fx-text-fill: white;");
 
         buyButton.setOnAction(e -> {
@@ -417,6 +418,14 @@ public class StockView {
         catch (IOException ex) {
             throw new RuntimeException(ex);
         }
+    }
+
+
+    /**
+     * This is a setter method for setting the fontSize
+     */
+    public static void setFontSize(double size) {
+        StockView.fontSize = size;
     }
 
     private void createAddView() {AddView addView = new AddView(user, balanceLabel);}

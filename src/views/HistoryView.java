@@ -17,6 +17,7 @@ import User.User;
 public class HistoryView {
     private Label historyLabel = new Label(String.format("Stock History"));
     private ListView<String> stocksList;
+    public static double fontSize = 16;
 
     public HistoryView(User user) {
         stocksList = new ListView<>();
@@ -43,7 +44,7 @@ public class HistoryView {
 
         historyLabel.setId("historyLabel");
         historyLabel.setStyle("-fx-text-fill: #e8e6e3;");
-        historyLabel.setFont(new Font(16));
+        historyLabel.setFont(new Font(fontSize));
 
         selectBoardBox.setAlignment(Pos.CENTER);
 
@@ -51,5 +52,13 @@ public class HistoryView {
         Scene dialogScene = new Scene(dialogVbox, 400, 400);
         dialog.setScene(dialogScene);
         dialog.show();
+    }
+
+
+    /**
+     * This is a setter method for setting the fontSize
+     */
+    public static void setFontSize(double size) {
+        HistoryView.fontSize = size;
     }
 }

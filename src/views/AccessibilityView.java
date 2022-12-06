@@ -14,16 +14,14 @@ public class AccessibilityView {
 
     Button bigButton, defaultBbutton, smallButton;
 
-    Stage stage;
-    BorderPane borderPane;
-    public final int fontSizeSmall = 10;
-    public final int fontSizeDefault = 20;
-    public final int fontSizeBig = 40;
+    public final double fontSizeSmall = 8;
+    public final double fontSizeDefault = 16;
+    public final double fontSizeBig = 32;
 
-    private int borderPaneLength = 1000;
-    private int borderPaneWidth = 500;
     private int buttonLength = 150;
     private int buttonWidth = 50;
+
+
 
 
     public AccessibilityView() {
@@ -80,20 +78,31 @@ public class AccessibilityView {
         dialog.show();
 
         defaultBbutton.setOnAction(e -> {
-            System.out.println("Default");
-            borderPane.requestFocus();
+            AddView.setFontSize(fontSizeDefault);
+            BuyView.setFontSize(fontSizeDefault);
+            HistoryView.setFontSize(fontSizeDefault);
+            ROIView.setFontSize(fontSizeDefault);
+            SellView.setFontSize(fontSizeDefault);
+            StockView.setFontSize(fontSizeDefault);
+
         });
 
         bigButton.setOnAction(e -> {
-            System.out.println("Bigger");
-            borderPane.requestFocus();
+            AddView.setFontSize(fontSizeBig);
+            BuyView.setFontSize(fontSizeBig);
+            HistoryView.setFontSize(fontSizeBig);
+            ROIView.setFontSize(fontSizeBig);
+            SellView.setFontSize(fontSizeBig);
+            StockView.setFontSize(fontSizeBig);
         });
 
         smallButton.setOnAction(e -> {
-            System.out.println("Smaller");
-            borderPane.requestFocus();
+            AddView.setFontSize(fontSizeSmall);
+            BuyView.setFontSize(fontSizeSmall);
+            HistoryView.setFontSize(fontSizeSmall);
+            ROIView.setFontSize(fontSizeSmall);
+            SellView.setFontSize(fontSizeSmall);
+            StockView.setFontSize(fontSizeSmall);
         });
-
-
     }
 }

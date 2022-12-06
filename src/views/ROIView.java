@@ -18,6 +18,7 @@ public class ROIView {
 
     private Label initial = new Label();
     private ListView<String> stocksList;
+    public static double fontSize = 16;
 
     public ROIView(User user, String date) {
         stocksList = new ListView<>();
@@ -41,17 +42,17 @@ public class ROIView {
 
         returnLabel.setId("amountLabel");
         returnLabel.setStyle("-fx-text-fill: #e8e6e3;");
-        returnLabel.setFont(new Font(16));
+        returnLabel.setFont(new Font(fontSize));
 
         netWorth.setText("Net worth: " + user.getNW(date));
         netWorth.setId("amountLabel");
         netWorth.setStyle("-fx-text-fill: #e8e6e3;");
-        netWorth.setFont(new Font(16));
+        netWorth.setFont(new Font(fontSize));
 
         initial.setText("Initial Deposit: " + user.getInitial());
         initial.setId("initialLabel");
         initial.setStyle("-fx-text-fill: #e8e6e3;");
-        initial.setFont(new Font(16));
+        initial.setFont(new Font(fontSize));
 
         selectBoardBox.setAlignment(Pos.CENTER);
 
@@ -59,5 +60,13 @@ public class ROIView {
         Scene dialogScene = new Scene(dialogVbox, 400, 400);
         dialog.setScene(dialogScene);
         dialog.show();
+    }
+
+
+    /**
+     * This is a setter method for setting the fontSize
+     */
+    public static void setFontSize(double size) {
+        ROIView.fontSize = size;
     }
 }

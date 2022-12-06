@@ -2,6 +2,10 @@ package Iterator;
 
 import java.util.*;
 import java.io.*;
+
+/**
+ * This class is completely used for testing, not related to main program
+ */
 public class Test {
     public static void main(String[] args) {
         String name = "Apple";

@@ -3,6 +3,11 @@ package src;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+
+/**
+ * This is the main class for the backend logistics
+ * Every backend classes are connected to this class
+ */
 public class User {
     public HashMap<StocksData, ArrayList<ArrayList<Object>>> stocksOwned;
     private double balance;
@@ -11,12 +16,24 @@ public class User {
 
     private double ROI;
 
+    /**
+     * This constructor is responsible for initializing a user's account
+     * @param name the user's name
+     * @param userID the user's ID
+     */
     public User(String name, String userID) {
         this.name = name;
         this.userID = userID;
         this.stocksOwned = new HashMap<>();
     }
 
+    /**
+     * This method is responsible for buying stocks
+     *
+     * @param stock the stock being purchased
+     * @param amount number of stocks being purchased
+     * @param date date of purchase
+     */
     public void buyStocks(StocksData stock, double amount, String date) {
         if (balance - amount * stock.getPrice(date) > 0) {
             balance -= amount * stock.getPrice(date);
@@ -35,6 +52,13 @@ public class User {
         }
     }
 
+    /**
+     * This method is responsible for selling stocks
+     *
+     * @param stock the stock being sold
+     * @param amount number of stocks being sold
+     * @param date sold date
+     */
     public void sellStocks(StocksData stock, double amount, String date) {
         balance += stock.getPrice(date) * amount;
         ArrayList<Object> data = new ArrayList<Object>();
@@ -49,6 +73,12 @@ public class User {
         }
     }
 
+    /**
+     * This method is responsible for getting net worth
+     *
+     * @param date the date requested for net worth
+     * @return net worth
+     */
     public double getNW(String date) {
         double result = 0;
         for (StocksData stock : stocksOwned.keySet()) {
@@ -61,6 +91,12 @@ public class User {
         return result + balance;
     }
 
+    /**
+     * This method is responsible for getting return on investments
+     *
+     * @param date the date requested for ROI
+     * @return list of ROI's for each stock
+     */
     public ArrayList<String> getROI(String date) {
         ArrayList<String> currROI = new ArrayList<>();
         for (StocksData stock : stocksOwned.keySet()) {
@@ -76,6 +112,11 @@ public class User {
         return currROI;
     }
 
+    /**
+     * This method is responsible for adding balance
+     *
+     * @param amount the amount being added to balance
+     */
     public void addBalance(double amount) {
         balance += amount;
     }

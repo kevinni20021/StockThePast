@@ -1,11 +1,16 @@
+import LoginSystem.LoginSystem;
+import User.User;
 import javafx.application.Application;
 import javafx.stage.Stage;
-import views.LoginView;
-import LoginSystem.LoginSystem;
+import views.StockView;
+import views.UserView;
 
-public class StockApp extends Application{
-    LoginView view;
+public class StockAppss extends Application {
+
+    StockView view;
     LoginSystem loginSystem;
+    private User loggedUser;
+
     public static void main(String[] args) {
         launch(args);
     }
@@ -13,6 +18,6 @@ public class StockApp extends Application{
     @Override
     public void start(Stage primaryStage) {
         this.loginSystem = new LoginSystem();
-        this.view = new LoginView(primaryStage, loginSystem); //tie the model to the view
+        this.view = new StockView(primaryStage,loginSystem);
     }
 }

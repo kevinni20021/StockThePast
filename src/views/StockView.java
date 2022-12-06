@@ -43,8 +43,8 @@ public class StockView {
     Button addButton, buyButton, sellButton, ROIButton, historyButton, nextButton;
 
     Label balanceLabel = new Label();
-
     Label dateLabel = new Label();
+
     BorderPane borderPane;
 
     Stage stage;
@@ -54,6 +54,8 @@ public class StockView {
     Button loginButton, createAccountButton, createButton, backButton;
     Canvas canvas;
     GraphicsContext gc; //the graphics context will be linked to the canvas
+
+    Button logoutButton, accessibilityButton;
 
     private int buttonLength = 150;
     private int buttonWidth = 50;
@@ -181,9 +183,6 @@ public class StockView {
         createAccountError.setStyle("-fx-text-fill: #e8e6e3;");
         createAccountError.setFont(new Font(fontSizeDefault));
 
-        //temporary will add in backend later
-        errorLabel.setText("Login System on Maintenence");
-        createAccountError.setText("Login System on Maintenence");
 
         //Aliignment for buttons and text fields for login
         HBox loginSystemButtons = new HBox(100, loginButton, createAccountButton);
@@ -234,8 +233,14 @@ public class StockView {
 
     //Backend methods go here
     private void loginAccount(){
-        this.user = new User("David", "cool");
-        activateStocks();
+        String password = this.usernameField.getText();
+        String username = this.passwordField.getText();
+        if (this.loginSystem.login(username, password) != null){
+            this.user = this.loginSystem.getAccount().getUser();
+            activateStocks();
+        } else {
+            this.errorLabel.setText(this.loginSystem.errorMsg);
+        }
 //        String password = this.usernameField.getText();
 //        String username = this.passwordField.getText();
 //        this.loginSystem.login(username, password);
@@ -318,6 +323,21 @@ public class StockView {
         nextButton.setFont(new Font(12));
         nextButton.setStyle("-fx-background-color: #17871b; -fx-text-fill: white;");
 
+        logoutButton = new Button("Logout");
+        logoutButton.setId("logoutButton");
+        logoutButton.setPrefSize(100, 50);
+        logoutButton.setFont(new Font(12));
+        logoutButton.setStyle("-fx-background-color: #17871b; -fx-text-fill: white;");
+
+        accessibilityButton = new Button("Accessibility");
+        accessibilityButton.setId("accessibility");
+        accessibilityButton.setPrefSize(100, 50);
+        accessibilityButton.setFont(new Font(12));
+        accessibilityButton.setStyle("-fx-background-color: #17871b; -fx-text-fill: white;");
+
+        accessibilityButton.setOnAction(e -> createAccessibilityView());
+        logoutButton.setOnAction(e -> logout());
+
         nextButton.setOnAction(e -> {
             date.getNextDay();
             dateLabel.setText("Date: " + date.getCurrDay());
@@ -340,6 +360,9 @@ public class StockView {
         HBox controls = new HBox(20, dateLabel, balanceLabel, nextButton, addButton, buyButton, sellButton, ROIButton, historyButton);
         controls.setPadding(new Insets(20, 20, 20, 20));
         controls.setAlignment(Pos.CENTER);
+
+        HBox logaccbuttons = new HBox(800, accessibilityButton, logoutButton);
+        logaccbuttons.setAlignment(Pos.CENTER);
 
         Group root = new Group();
 
@@ -365,6 +388,7 @@ public class StockView {
 
         borderPane.setTop(controls);
         borderPane.setCenter(root);
+        borderPane.setBottom(logaccbuttons);
 
         Scene scene = new Scene(borderPane, 1000, 800);
         stage.setScene(scene);
@@ -405,4 +429,23 @@ public class StockView {
     private void createROIView() {ROIView roiView = new ROIView(user, date.getCurrDay());}
 
     private void createHistoryView() {HistoryView historyView = new HistoryView(user);}
+
+    private void createAccessibilityView() {AccessibilityView accessibilityView = new AccessibilityView();}
+
+    private void clearLabels() {
+        errorLabel.setText("");
+        createAccountError.setText("");
+        confirmpasswordField.setText("");
+        usernameField.setText("");
+        newusernameField.setText("");
+        newpasswordField.setText("");
+        createAccountError.setText("");
+        passwordField.setText("");
+    }
+
+    private void logout() {
+        this.loginSystem.logout();
+        this.clearLabels();
+        initUI();
+    }
 }

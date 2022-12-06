@@ -5,6 +5,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.*;
 import javafx.scene.text.Font;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.geometry.Insets;
 
@@ -25,16 +26,13 @@ public class AccessibilityView {
     private int buttonWidth = 50;
 
 
-    public AccessibilityView(Stage stage) {
-        this.stage = stage;
-        initUI();
-    }
-    public void initUI() {
-        borderPane = new BorderPane();
-        borderPane.setStyle("-fx-background-color: #121212;");
+    public AccessibilityView() {
+        final Stage dialog = new Stage(); //dialogue box
+        dialog.initModality(Modality.APPLICATION_MODAL);
+        VBox dialogVbox = new VBox(20);
+        dialogVbox.setPadding(new Insets(20, 20, 20, 20));
+        dialogVbox.setStyle("-fx-background-color: #121212;");
 
-        //naming the window
-        this.stage.setTitle("Accessibility");
 
         //creating the button
         defaultBbutton = new Button("Default");
@@ -56,26 +54,30 @@ public class AccessibilityView {
         smallButton.setStyle("-fx-background-color: #17871b; -fx-text-fill: white;");
 
         //top right bottom left
-        HBox topButton = new HBox(bigButton);
-        topButton.setPadding(new Insets((borderPaneWidth - 3 * buttonWidth) / 6, (borderPaneLength -  buttonLength) / 2, (borderPaneWidth - 3 * buttonWidth) / 6, (borderPaneLength -  buttonLength) / 2));
-        topButton.setAlignment(Pos.CENTER);
+        VBox accessibilityBox = new VBox(75, bigButton, defaultBbutton, smallButton);
+//        HBox topButton = new HBox(bigButton);
+//        topButton.setPadding(new Insets((borderPaneWidth - 3 * buttonWidth) / 6, (borderPaneLength -  buttonLength) / 2, (borderPaneWidth - 3 * buttonWidth) / 6, (borderPaneLength -  buttonLength) / 2));
+//        topButton.setAlignment(Pos.CENTER);
+//
+//        HBox centerButton = new HBox(defaultBbutton);
+//        centerButton.setPadding(new Insets((borderPaneWidth - 3 * buttonWidth) / 6, (borderPaneLength -  buttonLength) / 2, (borderPaneWidth - 3 * buttonWidth) / 6, (borderPaneLength -  buttonLength) / 2));
+//        centerButton.setAlignment(Pos.CENTER);
+//
+//        HBox bottomBbuttons = new HBox(smallButton);
+//        bottomBbuttons.setPadding(new Insets((borderPaneWidth - 3 * buttonWidth) / 6, (borderPaneLength -  buttonLength) / 2, (borderPaneWidth - 3 * buttonWidth) / 6, (borderPaneLength -  buttonLength) / 2));
+//        bottomBbuttons.setAlignment(Pos.CENTER);
 
-        HBox centerButton = new HBox(defaultBbutton);
-        centerButton.setPadding(new Insets((borderPaneWidth - 3 * buttonWidth) / 6, (borderPaneLength -  buttonLength) / 2, (borderPaneWidth - 3 * buttonWidth) / 6, (borderPaneLength -  buttonLength) / 2));
-        centerButton.setAlignment(Pos.CENTER);
-
-        HBox bottomBbuttons = new HBox(smallButton);
-        bottomBbuttons.setPadding(new Insets((borderPaneWidth - 3 * buttonWidth) / 6, (borderPaneLength -  buttonLength) / 2, (borderPaneWidth - 3 * buttonWidth) / 6, (borderPaneLength -  buttonLength) / 2));
-        bottomBbuttons.setAlignment(Pos.CENTER);
-
-        borderPane.setTop(topButton);
-        borderPane.setCenter(centerButton);
-        borderPane.setBottom(bottomBbuttons);
+//        borderPane.setTop(topButton);
+//        borderPane.setCenter(centerButton);
+//        borderPane.setBottom(bottomBbuttons);
 
         //setting the size for our window
-        Scene scene = new Scene(borderPane, borderPaneLength, borderPaneWidth);
-        this.stage.setScene(scene);
-        this.stage.show();
+        accessibilityBox.setAlignment(Pos.CENTER);
+
+        dialogVbox.getChildren().add(accessibilityBox);
+        Scene dialogScene = new Scene(dialogVbox, 400, 400);
+        dialog.setScene(dialogScene);
+        dialog.show();
 
         defaultBbutton.setOnAction(e -> {
             System.out.println("Default");

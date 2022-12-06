@@ -1,32 +1,15 @@
-package Accessibility;
+package views;
 
-import javafx.application.Application;
-import javafx.collections.FXCollections;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.TextField;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
-import javafx.scene.paint.Color;
-import javafx.scene.shape.Circle;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
 import javafx.geometry.Insets;
 
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.rmi.server.ObjID;
-import java.util.*;
-
 //public class AccessibilityPage extends Application implements EventHandler<ActionEvent> {
-public class AccessibilityPage{
+public class AccessibilityView {
 
     Button bigButton, defaultBbutton, smallButton;
 
@@ -42,7 +25,7 @@ public class AccessibilityPage{
     private int buttonWidth = 50;
 
 
-    public AccessibilityPage(Stage stage) {
+    public AccessibilityView(Stage stage) {
         this.stage = stage;
         initUI();
     }

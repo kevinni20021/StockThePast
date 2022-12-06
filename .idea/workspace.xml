@@ -5,12 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="33eafcbf-f82e-4c0f-bcf4-1ab4ffb9491b" name="Changes" comment="Merged Main">
+      <change afterPath="$PROJECT_DIR$/src/views/LoginView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/StockApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/StockAppss.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/StockThePast.iml" beforeDir="false" afterPath="$PROJECT_DIR$/StockThePast.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Drawing/StocksViewer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Drawing/StocksViewer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Drawing/Testing.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Drawing/Testing.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/User/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/User/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Accessibility/AccessibilityPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/AccessibilityView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Accessibility/CreateAccessibilityPage.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Drawing/StocksApp.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/StockApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/StockApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/StockAppss.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/StockAppss.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/StockView/AddView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/AddView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/StockView/BuyView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/BuyView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/StockView/HistoryView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/HistoryView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/StockView/ROIView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/ROIView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/StockView/SellView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/SellView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/StockView/UserView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/UserView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/StockView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/StockView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,7 +35,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="Login-System" />
+        <entry key="$PROJECT_DIR$" value="Documentation" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -54,6 +62,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="Git.Branch.Popup.ShowAllRemotes" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Java/javafx-sdk-19/lib" />
     <property name="project.structure.last.edited" value="Global Libraries" />
     <property name="project.structure.proportion" value="0.0" />

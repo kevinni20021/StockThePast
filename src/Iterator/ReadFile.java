@@ -18,6 +18,11 @@ public class ReadFile implements Iterator{
     private ArrayList<String> fileInfo;
 
 
+    /**
+     * This constructor is responsible for getting the file name when this class is called
+     * As well as saving the file information into the variable fileInfo
+     * @param fileName the name of the file that the user wants to iterate through
+     */
     public ReadFile(String fileName) {
         this.fileName = fileName;
         this.fileInfo = this.readFileReverse();
@@ -59,7 +64,6 @@ public class ReadFile implements Iterator{
         return result;
     }
 
-
     /**
      * Returns the current day as a String
      * @return current date
@@ -74,7 +78,6 @@ public class ReadFile implements Iterator{
         }
         return temp;
     }
-
 
     /**
      * This method will organize the file information into a map
@@ -116,6 +119,12 @@ public class ReadFile implements Iterator{
         values.put("Low", this.organizeFileInfo().get(temp).get(4));
         return values;
     }
+
+
+    /**
+     * This method does the same thing as the previous function, but it takes in a string as the parameter
+     * @return an arraylist that contains all the information for the specified date
+     */
     public Map<String, String> dayInfo(String date) {
         Map<String, String> values = new HashMap<>();
         //Date,Close/Last,Volume,Open,High,Low
@@ -127,10 +136,20 @@ public class ReadFile implements Iterator{
         return values;
     }
 
+
+    /**
+     * This method is responsible for checking if there is still information next day from the file
+     * @return true if there is a next day, false otherwise
+     */
     @Override
-    public boolean hasNextDay() {
+    public boolean hasNexyDay() {
         return curYear != 2022 || curMonth != 11 || curDay != 18;
     }
+
+
+    /**
+     * This method is responsible for iterating to the next day when this function is called
+     */
     @Override
     public void getNextDay() {
         this.counter++;
@@ -140,6 +159,10 @@ public class ReadFile implements Iterator{
         curDay = Integer.parseInt(date[1]);
     }
 
+
+    /**
+     * This function is responsible for moving the current date back by one day
+     */
     public void getLastDay() {
         if (curDay == 20 && curMonth == 11 && curYear == 2017) {
             System.out.println("Today is the first day!");

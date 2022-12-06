@@ -233,13 +233,14 @@ public class StockView {
 
     //Backend methods go here
     private void loginAccount(){
-        String password = this.usernameField.getText();
-        String username = this.passwordField.getText();
+        String username = this.usernameField.getText();
+        String password = this.passwordField.getText();
         if (this.loginSystem.login(username, password) != null){
             this.user = this.loginSystem.getAccount().getUser();
             activateStocks();
         } else {
             this.errorLabel.setText(this.loginSystem.errorMsg);
+            this.loginSystem.logout();
         }
 //        String password = this.usernameField.getText();
 //        String username = this.passwordField.getText();

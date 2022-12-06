@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="33eafcbf-f82e-4c0f-bcf4-1ab4ffb9491b" name="Changes" comment="Initial integration of LoginView and UserView">
+    <list default="true" id="33eafcbf-f82e-4c0f-bcf4-1ab4ffb9491b" name="Changes" comment="3.2.2 Integration complete">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/LoginSystem/LoginSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LoginSystem/LoginSystem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/State/UserState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/State/UserState.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/AccessibilityView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/AccessibilityView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/LoginSystem/AccountManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LoginSystem/AccountManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/views/StockView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/StockView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -139,7 +137,14 @@
       <option name="project" value="LOCAL" />
       <updated>1670285947308</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="3.2.2 Integration complete">
+      <created>1670288636141</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1670288636141</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -157,7 +162,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Merged Main" />
     <MESSAGE value="Initial integration of LoginView and UserView" />
-    <option name="LAST_COMMIT_MESSAGE" value="Initial integration of LoginView and UserView" />
+    <MESSAGE value="3.2.2 Integration complete" />
+    <option name="LAST_COMMIT_MESSAGE" value="3.2.2 Integration complete" />
     <option name="GROUP_MULTIFILE_MERGE_BY_DIRECTORY" value="true" />
   </component>
 </project>

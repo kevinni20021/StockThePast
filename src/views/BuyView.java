@@ -1,4 +1,4 @@
-package StockView;
+package views;
 
 
 import Command.Command;

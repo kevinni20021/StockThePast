@@ -18,6 +18,9 @@ public class AccountManager {
     //Error code 3 means User.User not in system
     //Error code 2 means incorrect username or password
     public int login(String username, String password) {
+        System.out.println(this.accounts);
+        System.out.println(username);
+        System.out.println(this.accounts.containsKey(username));
         if (this.isCurrLoggedin()) {
             return 1;
             //System.out.println("Already logged in");

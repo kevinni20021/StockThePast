@@ -1,4 +1,4 @@
-package StockView;
+package views;
 
 import User.User;
 import javafx.geometry.Insets;

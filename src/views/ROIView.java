@@ -1,6 +1,5 @@
-package StockView;
+package views;
 
-import Stocks.StocksData;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
@@ -9,16 +8,18 @@ import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
-
-import java.util.ArrayList;
 import User.User;
 
 
-public class HistoryView {
-    private Label historyLabel = new Label(String.format("Stock History"));
+public class ROIView {
+    private Label returnLabel = new Label(String.format("Return on Investments"));
+
+    private Label netWorth = new Label();
+
+    private Label initial = new Label();
     private ListView<String> stocksList;
 
-    public HistoryView(User user) {
+    public ROIView(User user, String date) {
         stocksList = new ListView<>();
 
         final Stage dialog = new Stage(); //dialogue box
@@ -30,20 +31,27 @@ public class HistoryView {
         stocksList.setId("stocksList");  // DO NOT MODIFY ID
         stocksList.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
 
-        for (StocksData stock : user.stocksOwned.keySet()) {
-            for (ArrayList<Object> stockData : user.stocksOwned.get(stock)) {
-                stocksList.getItems().add(stock.getName() + " " + stockData.toString());
-            }
+        for (String stock : user.getROI(date)) {
+            stocksList.getItems().add(stock);
         }
 
-        VBox selectBoardBox = new VBox(10, historyLabel, stocksList);
+        VBox selectBoardBox = new VBox(10, returnLabel, netWorth, initial, stocksList);
 
-        // Default styles which can be modified
         stocksList.setPrefHeight(100);
 
-        historyLabel.setId("historyLabel");
-        historyLabel.setStyle("-fx-text-fill: #e8e6e3;");
-        historyLabel.setFont(new Font(16));
+        returnLabel.setId("amountLabel");
+        returnLabel.setStyle("-fx-text-fill: #e8e6e3;");
+        returnLabel.setFont(new Font(16));
+
+        netWorth.setText("Net worth: " + user.getNW(date));
+        netWorth.setId("amountLabel");
+        netWorth.setStyle("-fx-text-fill: #e8e6e3;");
+        netWorth.setFont(new Font(16));
+
+        initial.setText("Initial Deposit: " + user.getInitial());
+        initial.setId("initialLabel");
+        initial.setStyle("-fx-text-fill: #e8e6e3;");
+        initial.setFont(new Font(16));
 
         selectBoardBox.setAlignment(Pos.CENTER);
 

@@ -21,14 +21,4 @@ public class UserState implements State {
     public String getState(){
         return "UserState";
     }
-
-    public void buy(StocksData stock, double amount, String date) {
-        Command buy = new buyCommand(user);
-        buy.execute(stock, amount, date);
-    }
-
-    public void sell(StocksData stock, double amount, String date) {
-        Command sell = new sellCommand(user);
-        sell.execute(stock, amount, date);
-    }
 }

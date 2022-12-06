@@ -5,9 +5,6 @@ import java.util.*;
 import java.io.*;
 
 
-/**
- * A class responsible for iterating through the file
- */
 public class ReadFile implements Iterator{
 
     // This class is responsible for looping through the given files
@@ -67,10 +64,24 @@ public class ReadFile implements Iterator{
         return result;
     }
 
+    /**
+     * Returns the current day as a String
+     * @return current date
+     */
+    public String getCurrDay() {
+        String temp = curMonth + "/" + curDay + "/" + curYear;;
+        if (curMonth < 10) {
+            temp = "0" + temp;
+        }
+        if (curDay < 10) {
+            temp = temp.substring(0, 3) + "0" + temp.substring(3);
+        }
+        return temp;
+    }
 
     /**
      * This method will organize the file information into a map
-     * @return a map where the key is date, and the value is a list of the parameters
+     * @return a map where the keys is date, and the value is a list of the parameters
      */
     public Map<String, ArrayList<String>> organizeFileInfo() {
         ArrayList<String> fileInfo = this.readFileReverse();

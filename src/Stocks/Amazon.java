@@ -1,19 +1,19 @@
-package src;
+package Stocks;
 
 import java.io.IOException;
 
 
 /**
- * This subclass is responsible for the Meta.csv file
+ * This subclass is responsible for the Amazon.csv file
  */
-public class Meta extends StocksData {
+public class Amazon extends StocksData {
 
 
     /**
      * This constructor read the file that the user specified. Throws an exception if the input file is invalid
      * @throws IOException
      */
-    public Meta() throws IOException {
+    public Amazon() throws IOException {
         super();
     }
 
@@ -24,6 +24,6 @@ public class Meta extends StocksData {
      */
     @Override
     public String getName() {
-        return "Meta";
+        return "Amazon";
     }
 }

@@ -1,4 +1,4 @@
-package src;
+package Stocks;
 
 import java.io.IOException;
 

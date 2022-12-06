@@ -1,7 +1,7 @@
 package Command;
 
-import src.StocksData;
-import src.User;
+import Stocks.StocksData;
+import User.User;
 
 /**
  * A class responsible for selling stock
@@ -27,6 +27,6 @@ public class sellCommand implements Command {
      * @param date the date to buy
      */
     public void execute(StocksData stock, double amount, String date) {
-        user.buyStocks(stock, amount, date);
+        user.sellStocks(stock, amount, date);
     }
 }

@@ -1,6 +1,6 @@
 package Command;
 
-import src.StocksData;
+import Stocks.StocksData;
 
 
 /**

@@ -1,19 +1,19 @@
-package src;
+package Stocks;
 
 import java.io.IOException;
 
 
 /**
- * This subclass is responsible for the Tesla.csv file
+ * This subclass is responsible for the StarBucks.csv file
  */
-public class Tesla extends StocksData {
+public class StarBucks extends StocksData {
 
 
     /**
      * This constructor read the file that the user specified. Throws an exception if the input file is invalid
      * @throws IOException
      */
-    public Tesla() throws IOException {
+    public StarBucks() throws IOException {
         super();
     }
 
@@ -24,6 +24,6 @@ public class Tesla extends StocksData {
      */
     @Override
     public String getName() {
-        return "Tesla";
+        return "StarBucks";
     }
 }

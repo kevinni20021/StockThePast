@@ -1,7 +1,7 @@
 package Command;
 
-import src.StocksData;
-import src.User;
+import Stocks.StocksData;
+import User.User;
 
 
 /**

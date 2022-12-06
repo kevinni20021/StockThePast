@@ -1,5 +1,5 @@
 package LoginSystem;
-import src.User;
+import User.User;
 
 
 /**
@@ -100,7 +100,7 @@ public class Account {
     public void setUsername(String username) {
         if (this.isLoggedin()){
             this.username = username;
-            //User class will change username here
+            //User.User class will change username here
         }
     }
 }

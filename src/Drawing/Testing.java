@@ -4,9 +4,9 @@ import java.io.IOException;
 
 public class Testing {
     public static void main(String[] args) throws IOException {
-        src.Amazon a = new src.Amazon();
-        src.Meta m = new src.Meta();
-        src.User user = new src.User("David", "hudavid6");
+        Stocks.Amazon a = new Stocks.Amazon();
+        Stocks.Meta m = new Stocks.Meta();
+        User.User user = new User.User("David", "hudavid6");
         user.addBalance(3000);
         user.buyStocks(a, 5, "11/11/2022");
         user.buyStocks(a, 20, "11/14/2022");

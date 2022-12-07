@@ -1,6 +1,8 @@
 package views;
 
 import LoginSystem.LoginSystem;
+import State.LoginState;
+import State.UserState;
 import User.User;
 import javafx.stage.Stage;
 
@@ -17,6 +19,8 @@ public class StockView {
 
     public static LoginSystem system;
 
+    LoginState lState;
+    UserState uState;
     private static HashMap<String, UserView> userViews;
 
 
@@ -29,6 +33,8 @@ public class StockView {
         userViews = new HashMap<>();
         stage = primaryStage;
         system = loginSystem;
+        lState = new LoginState(loginSystem);
+        uState = new UserState(loginSystem);
         LoginView loginView = new LoginView(stage, system);
     }
 

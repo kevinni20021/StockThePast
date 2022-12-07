@@ -46,8 +46,8 @@ public class LoginSystem {
      * @param username the username that the user wants for the new account
      * @param password the password that the user wants for the new account
      */
-    public void createAccount(String username, String password) {
-        this.accounts.createAccount(username, password);
+    public int createAccount(String username, String password) {
+        return this.accounts.createAccount(username, password);
     }
 
 

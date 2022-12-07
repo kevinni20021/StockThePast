@@ -1,9 +1,7 @@
 import LoginSystem.LoginSystem;
-import User.User;
 import javafx.application.Application;
 import javafx.stage.Stage;
 import views.StockView;
-
 
 /**
  * This is the main class to run the application
@@ -12,7 +10,6 @@ public class StockApp extends Application {
 
     StockView view;
     LoginSystem loginSystem;
-    private User loggedUser;
 
 
     /**
@@ -31,6 +28,6 @@ public class StockApp extends Application {
     @Override
     public void start(Stage primaryStage) {
         this.loginSystem = new LoginSystem();
-        this.view = new StockView(primaryStage,loginSystem);
+        this.view = new StockView(primaryStage, loginSystem);
     }
 }

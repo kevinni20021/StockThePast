@@ -155,6 +155,13 @@ public class User {
 
 
     /**
+     * This is a getter method for user id
+     * @return user id as a string
+     */
+    public String getUserID() {return userID;};
+
+
+    /**
      * This is a setter method to set a new name to the user
      * @param name the new name set to the user
      */

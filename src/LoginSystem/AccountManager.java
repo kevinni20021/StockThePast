@@ -51,7 +51,7 @@ public class AccountManager {
             }
         } else {
             return 3;
-            //System.out.println("User not in system, please create a new account");
+            //System.out.println("User.User not in system, please create a new account");
         }
     }
 
@@ -63,11 +63,12 @@ public class AccountManager {
      */
     public void createAccount(String username, String password) {
         if (this.accounts.containsKey(username)){
-            //System.out.println("Username is taken");
+            return 0;
         } else {
             HashMap<String, Account> passanduser = new HashMap<String, Account>();
-            passanduser.put(password, new Account(username, password)); //new Acoount(new User)
+            passanduser.put(password, new Account(username, password)); //new Acoount(new User.User)
             this.accounts.put(username, passanduser);
+            return 1;
         }
     }
 
@@ -106,4 +107,11 @@ public class AccountManager {
         this.setCurrLoggedin(false);
         this.activeAccount = null;
     }
+
+
+    /**
+     * This is a getter method for accounts
+     * @return accounts
+     */
+    public HashMap<String, HashMap<String, Account>> getAccounts() {return accounts;}
 }

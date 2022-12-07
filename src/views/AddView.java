@@ -83,6 +83,9 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 
+/**
+ * This class is responsible for the add balance subpage of the application
+ */
 public class AddView {
     private Button add;
     private Label amountLabel = new Label(String.format("Enter the balance you want to add"));
@@ -91,6 +94,12 @@ public class AddView {
     private Label resultLabel = new Label("");
     public static double fontSize = 16;
 
+
+    /**
+     * Main code that created the page
+     * @param user the specific user that the program is adding balance to
+     * @param balanceLabel the label that the program is editing
+     */
     public AddView(User user, Label balanceLabel) {
 
         final Stage dialog = new Stage(); //dialogue box

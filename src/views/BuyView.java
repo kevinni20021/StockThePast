@@ -17,6 +17,9 @@ import java.io.IOException;
 import User.User;
 
 
+/**
+ * This class is responsible for the buy stock subpage of the application
+ */
 public class BuyView {
     private Label selectStockLabel;
     private Button selectStockButton;
@@ -29,6 +32,13 @@ public class BuyView {
     private Label buyLabel = new Label("");
     public static double fontSize = 16;
 
+
+    /**
+     * Main code that created this page
+     * @param user the user the program is buying stocks for
+     * @param balanceLabel the label the program is changing
+     * @param date the date the user is buying the stocks at
+     */
     public BuyView(User user, Label balanceLabel, String date) {
         Command buy = new buyCommand(user);
         selectStockLabel = new Label(String.format("List of stocks to buy"));

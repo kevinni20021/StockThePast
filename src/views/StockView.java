@@ -31,6 +31,10 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.util.Objects;
 
+
+/**
+ * This class is responsible for the main page of the application
+ */
 public class StockView {
 
     private User user;
@@ -94,11 +98,22 @@ public class StockView {
 
     XYChart.Series<String, Number> graphTesla = new XYChart.Series<>();
 
+
+    /**
+     * The constructor to call when opening the main page of the application
+     * @param primaryStage the primary stage to set to
+     * @param loginSystem the loginSystem implemented from backend
+     */
     public StockView(Stage primaryStage, LoginSystem loginSystem) {
         this.stage = primaryStage;
         this.loginSystem = loginSystem;
         initUI();
     }
+
+
+    /**
+     * Main code for the page
+     */
     private void initUI(){
         this.stage.setTitle("Stock the Past");
         borderPane = new BorderPane();
@@ -217,7 +232,12 @@ public class StockView {
         this.stage.show();
     }
 
-    //Methods to switch views
+
+    /**
+     * This is the method responsible to switch views from login to create page
+     * @param createPage the create page
+     * @param loginpage the login page
+     */
     private void CreateAccView(VBox createPage, VBox loginpage) {
         loginpage.setVisible(false);
         createPage.setVisible(true);
@@ -225,6 +245,12 @@ public class StockView {
         borderPane.setCenter(createPage);
     }
 
+
+    /**
+     * This is the method responsible to switch views from create to login page
+     * @param createPage the create page
+     * @param loginpage the login page
+     */
     private void loginView(VBox createPage, VBox loginpage){
         loginpage.setVisible(true);
         createPage.setVisible(false);
@@ -232,7 +258,10 @@ public class StockView {
         borderPane.setCenter(loginpage);
     }
 
-    //Backend methods go here
+
+    /**
+     * This method implements the backend code for login account
+     */
     private void loginAccount(){
         String username = this.usernameField.getText();
         String password = this.passwordField.getText();
@@ -248,6 +277,10 @@ public class StockView {
 //        this.loginSystem.login(username, password);
     }
 
+
+    /**
+     * This method implements the backend code for create account
+     */
     private void createAccount(){
         String newpassword = this.newpasswordField.getText();
         String confirmpassword = this.confirmpasswordField.getText();
@@ -259,6 +292,11 @@ public class StockView {
         }
     }
 
+
+    /**
+     * Main code for the page
+     * Specifically the user controlled options
+     */
     private void activateStocks(){
         borderPane = new BorderPane();
 
@@ -398,6 +436,11 @@ public class StockView {
 
     }
 
+
+    /**
+     * This method is responsible to get the stock information for next day
+     * Implemented from Iterator
+     */
     private void nextDay() {
         try {
             if (graphAmazon.getData().size() == 30) {
@@ -428,20 +471,48 @@ public class StockView {
         StockView.fontSize = size;
     }
 
+
+    /**
+     * This is a quick method used for creating an add view
+     */
     private void createAddView() {AddView addView = new AddView(user, balanceLabel);}
 
+
+    /**
+     * This is a quick method used for creating a buy view
+     */
     private void createBuyView(){ BuyView buyView = new BuyView(user, balanceLabel, date.getCurrDay()); }
 
+
+    /**
+     * This is a quick method used for creating a sell view
+     */
     private void createSellView(){
         SellView sellView = new SellView(user, balanceLabel, date.getCurrDay());
     }
 
+
+    /**
+     * This is a quick method used for creating an ROI view
+     */
     private void createROIView() {ROIView roiView = new ROIView(user, date.getCurrDay());}
 
+
+    /**
+     * This is a quick method used for creating a history view
+     */
     private void createHistoryView() {HistoryView historyView = new HistoryView(user);}
 
+
+    /**
+     * This is a quick method used for creating an accessibility view
+     */
     private void createAccessibilityView() {AccessibilityView accessibilityView = new AccessibilityView();}
 
+
+    /**
+     * This method is responsible for clearing all the labels
+     */
     private void clearLabels() {
         errorLabel.setText("");
         createAccountError.setText("");
@@ -453,6 +524,10 @@ public class StockView {
         passwordField.setText("");
     }
 
+
+    /**
+     * This method is responsible for loging the user out
+     */
     private void logout() {
         this.loginSystem.logout();
         this.clearLabels();

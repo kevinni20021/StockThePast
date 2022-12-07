@@ -13,6 +13,10 @@ import javafx.stage.Stage;
 
 import java.util.Objects;
 
+
+/**
+ * This class is responsible for the login page of the application
+ */
 public class LoginView {
 
     Stage stage;
@@ -46,13 +50,23 @@ public class LoginView {
     private PasswordField newpasswordField = new PasswordField();
     private PasswordField confirmpasswordField = new PasswordField();
 
-    //Will start on the login page
+
+    /**
+     * The constructor of the Login page
+     * This the first page that the applcation will open
+     * @param stage the stage of the page
+     * @param loginSystem the loginSystem implemented from backend
+     */
     public LoginView(Stage stage, LoginSystem loginSystem) {
         this.stage = stage;
         this.loginSystem = loginSystem;
         initUI();
     }
 
+
+    /**
+     * Main code for the page
+     */
     private void initUI(){
         this.stage.setTitle("Stock the Past");
         borderPane = new BorderPane();
@@ -174,7 +188,12 @@ public class LoginView {
         this.stage.show();
     }
 
-    //Methods to switch views
+
+    /**
+     * This is the method responsible to switch views from login to create page
+     * @param createPage the create page
+     * @param loginpage the login page
+     */
     private void CreateAccView(VBox createPage, VBox loginpage) {
         loginpage.setVisible(false);
         createPage.setVisible(true);
@@ -182,6 +201,12 @@ public class LoginView {
         borderPane.setCenter(createPage);
     }
 
+
+    /**
+     * This is the method responsible to switch views from create to login page
+     * @param createPage the create page
+     * @param loginpage the login page
+     */
     private void loginView(VBox createPage, VBox loginpage){
         loginpage.setVisible(true);
         createPage.setVisible(false);
@@ -189,13 +214,20 @@ public class LoginView {
         borderPane.setCenter(loginpage);
     }
 
-    //Backend methods go here
+
+    /**
+     * This method implements the backend code for login system
+     */
     private void loginAccount(){
         String password = this.usernameField.getText();
         String username = this.passwordField.getText();
         this.loginSystem.login(username, password);
     }
 
+
+    /**
+     * This method implements the backend code for create account
+     */
     private void createAccount(){
         String newpassword = this.newpasswordField.getText();
         String confirmpassword = this.confirmpasswordField.getText();

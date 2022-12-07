@@ -9,7 +9,9 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.geometry.Insets;
 
-//public class AccessibilityPage extends Application implements EventHandler<ActionEvent> {
+/**
+ * This class is responsible for the accessibility subpage of the application
+ */
 public class AccessibilityView {
 
     Button bigButton, defaultBbutton, smallButton;
@@ -22,8 +24,9 @@ public class AccessibilityView {
     private int buttonWidth = 50;
 
 
-
-
+    /**
+     * Main code that created this page
+     */
     public AccessibilityView() {
         final Stage dialog = new Stage(); //dialogue box
         dialog.initModality(Modality.APPLICATION_MODAL);
@@ -53,21 +56,6 @@ public class AccessibilityView {
 
         //top right bottom left
         VBox accessibilityBox = new VBox(75, bigButton, defaultBbutton, smallButton);
-//        HBox topButton = new HBox(bigButton);
-//        topButton.setPadding(new Insets((borderPaneWidth - 3 * buttonWidth) / 6, (borderPaneLength -  buttonLength) / 2, (borderPaneWidth - 3 * buttonWidth) / 6, (borderPaneLength -  buttonLength) / 2));
-//        topButton.setAlignment(Pos.CENTER);
-//
-//        HBox centerButton = new HBox(defaultBbutton);
-//        centerButton.setPadding(new Insets((borderPaneWidth - 3 * buttonWidth) / 6, (borderPaneLength -  buttonLength) / 2, (borderPaneWidth - 3 * buttonWidth) / 6, (borderPaneLength -  buttonLength) / 2));
-//        centerButton.setAlignment(Pos.CENTER);
-//
-//        HBox bottomBbuttons = new HBox(smallButton);
-//        bottomBbuttons.setPadding(new Insets((borderPaneWidth - 3 * buttonWidth) / 6, (borderPaneLength -  buttonLength) / 2, (borderPaneWidth - 3 * buttonWidth) / 6, (borderPaneLength -  buttonLength) / 2));
-//        bottomBbuttons.setAlignment(Pos.CENTER);
-
-//        borderPane.setTop(topButton);
-//        borderPane.setCenter(centerButton);
-//        borderPane.setBottom(bottomBbuttons);
 
         //setting the size for our window
         accessibilityBox.setAlignment(Pos.CENTER);

@@ -22,6 +22,11 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
+
+/**
+ * This class is responsible for the user page of the application
+ * This class is merged into StockView
+ */
 public class UserView {
 
     private User user;
@@ -52,6 +57,7 @@ public class UserView {
     XYChart.Series<String, Number> graphStarBucks = new XYChart.Series<>();
 
     XYChart.Series<String, Number> graphTesla = new XYChart.Series<>();
+
 
     public UserView(User user, Stage primaryStage) {
         this.user = user;

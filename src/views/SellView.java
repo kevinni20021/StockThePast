@@ -17,6 +17,9 @@ import java.io.IOException;
 import User.User;
 
 
+/**
+ * This class is responsible for the sell stock subpage of the application
+ */
 public class SellView {
     private Label selectStockLabel;
     private Button selectStockButton;
@@ -29,6 +32,13 @@ public class SellView {
     private Label sellLabel = new Label("");
     public static double fontSize = 16;
 
+
+    /**
+     * Main code that created this page
+     * @param user the user the program is selling stocks for
+     * @param balanceLabel the label the program is changing
+     * @param date the date the user is selling the stocks at
+     */
     public SellView(User user, Label balanceLabel, String date) {
         Command sell = new sellCommand(user);
         selectStockLabel = new Label(String.format("List of stocks to sell"));

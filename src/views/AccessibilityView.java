@@ -9,9 +9,12 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.geometry.Insets;
 
-//public class AccessibilityPage extends Application implements EventHandler<ActionEvent> {
+/**
+ * This class is responsible for the accessibility subpage of the application
+ */
 public class AccessibilityView {
 
+    UserView view;
     Button bigButton, defaultButton, smallButton;
 
     public final double fontSizeSmall = 8;
@@ -22,7 +25,11 @@ public class AccessibilityView {
     private int buttonWidth = 50;
 
 
-    public AccessibilityView() {
+    /**
+     * Main code that created this page
+     */
+    public AccessibilityView(UserView view) {
+        this.view = view;
         final Stage dialog = new Stage(); //dialogue box
         dialog.initModality(Modality.APPLICATION_MODAL);
         VBox dialogVbox = new VBox(20);
@@ -66,6 +73,8 @@ public class AccessibilityView {
             HistoryView.setFontSize(fontSizeDefault);
             ROIView.setFontSize(fontSizeDefault);
             SellView.setFontSize(fontSizeDefault);
+            UserView.setFontSize(fontSizeDefault);
+            view.initUI();
         });
 
         bigButton.setOnAction(e -> {
@@ -74,6 +83,9 @@ public class AccessibilityView {
             HistoryView.setFontSize(fontSizeBig);
             ROIView.setFontSize(fontSizeBig);
             SellView.setFontSize(fontSizeBig);
+            UserView.setFontSize(fontSizeBig - 2);
+            view.initUI();
+            view.dateLabel.setFont(new Font(16));
         });
 
         smallButton.setOnAction(e -> {
@@ -82,6 +94,8 @@ public class AccessibilityView {
             HistoryView.setFontSize(fontSizeSmall);
             ROIView.setFontSize(fontSizeSmall);
             SellView.setFontSize(fontSizeSmall);
+            UserView.setFontSize(fontSizeSmall);
+            view.initUI();
         });
     }
 }

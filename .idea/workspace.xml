@@ -61,14 +61,14 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "last_opened_file_path": "C:/Users/CGOD/Desktop/University/Second year/First Semester/CSC207/Projects",
-    "project.structure.last.edited": "Libraries",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/CGOD/Desktop/University/Second year/First Semester/CSC207/Projects&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\kevin\OneDrive\Desktop\UofTears\CSC207-Project\src" />
@@ -76,7 +76,7 @@
       <recent name="C:\Users\kevin\OneDrive\Desktop\UofTears\CSC207-Project\StockThePast\src" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.StockAppss">
+  <component name="RunManager" selected="Application.StockApp">
     <configuration name="Main (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="src.Main" />
       <module name="StockThePast" />
@@ -129,8 +129,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.StockAppss" />
         <item itemvalue="Application.StockApp" />
+        <item itemvalue="Application.StockAppss" />
         <item itemvalue="Application.Main (1)" />
         <item itemvalue="Application.Main" />
       </list>

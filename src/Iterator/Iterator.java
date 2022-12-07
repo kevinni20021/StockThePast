@@ -9,7 +9,7 @@ public interface Iterator {
      * This method is responsible for checking if there is still information next day from the file
      * @return true if there is a next day, false otherwise
      */
-    boolean hasNexyDay();
+    boolean hasNextDay();
 
 
     /**

@@ -31,9 +31,9 @@ public class AccountManager {
      * @return the error code listed above
      */
     public int login(String username, String password) {
-        System.out.println(this.accounts);
-        System.out.println(username);
-        System.out.println(this.accounts.containsKey(username));
+//        System.out.println(this.accounts);
+//        System.out.println(username);
+//        System.out.println(this.accounts.containsKey(username));
         if (this.isCurrLoggedin()) {
             return 1;
             //System.out.println("Already logged in");
@@ -63,7 +63,7 @@ public class AccountManager {
      */
     public void createAccount(String username, String password) {
         if (this.accounts.containsKey(username)){
-            System.out.println("Username is taken");
+            //System.out.println("Username is taken");
         } else {
             HashMap<String, Account> passanduser = new HashMap<String, Account>();
             passanduser.put(password, new Account(username, password)); //new Acoount(new User)

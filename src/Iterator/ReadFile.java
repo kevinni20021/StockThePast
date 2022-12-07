@@ -142,7 +142,7 @@ public class ReadFile implements Iterator{
      * @return true if there is a next day, false otherwise
      */
     @Override
-    public boolean hasNexyDay() {
+    public boolean hasNextDay() {
         return curYear != 2022 || curMonth != 11 || curDay != 18;
     }
 

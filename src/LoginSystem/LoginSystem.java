@@ -30,7 +30,7 @@ public class LoginSystem {
     public Account login(String username, String password) {
         switch (this.accounts.login(username, password)) {
             case 0 -> {
-                System.out.println("Login Successful");
+                //System.out.println("Login Successful");
                 return this.accounts.getActive();
             }
             case 1 -> errorMsg = "Already logged in";

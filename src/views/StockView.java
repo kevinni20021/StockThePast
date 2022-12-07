@@ -278,7 +278,7 @@ public class StockView {
         buyButton = new Button("Buy");
         buyButton.setId("Buy");
         buyButton.setPrefSize(80, 50);
-        buyButton.setFont(new Font(fontSize));
+        buyButton.setFont(new Font(12));
         buyButton.setStyle("-fx-background-color: #17871b; -fx-text-fill: white;");
 
         buyButton.setOnAction(e -> {

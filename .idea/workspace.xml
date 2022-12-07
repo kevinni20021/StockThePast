@@ -4,18 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="33eafcbf-f82e-4c0f-bcf4-1ab4ffb9491b" name="Changes" comment="">
+    <list default="true" id="33eafcbf-f82e-4c0f-bcf4-1ab4ffb9491b" name="Changes" comment="3.2.2 Integration complete">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/StockThePast.iml" beforeDir="false" afterPath="$PROJECT_DIR$/StockThePast.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Iterator/Iterator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Iterator/Iterator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Iterator/ReadFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Iterator/ReadFile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/AccessibilityView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/AccessibilityView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/AddView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/AddView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/BuyView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/BuyView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/HistoryView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/HistoryView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/ROIView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/ROIView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/SellView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/SellView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/LoginSystem/AccountManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LoginSystem/AccountManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/LoginSystem/LoginSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LoginSystem/LoginSystem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/StockApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/StockApp.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/views/StockView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/StockView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/UserView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/UserView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,13 +41,6 @@
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
   </component>
-  <component name="GithubProjectSettings">
-    <option name="branchProtectionPatterns">
-      <list>
-        <option value="issue-id\/name" />
-      </list>
-    </option>
-  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -61,14 +50,14 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "last_opened_file_path": "C:/Users/CGOD/Desktop/University/Second year/First Semester/CSC207/Projects",
-    "project.structure.last.edited": "Libraries",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/CGOD/Desktop/University/Second year/First Semester/CSC207/Projects&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\kevin\OneDrive\Desktop\UofTears\CSC207-Project\src" />
@@ -76,7 +65,7 @@
       <recent name="C:\Users\kevin\OneDrive\Desktop\UofTears\CSC207-Project\StockThePast\src" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.StockAppss">
+  <component name="RunManager" selected="Application.StockApp">
     <configuration name="Main (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="src.Main" />
       <module name="StockThePast" />
@@ -129,8 +118,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.StockAppss" />
         <item itemvalue="Application.StockApp" />
+        <item itemvalue="Application.StockAppss" />
         <item itemvalue="Application.Main (1)" />
         <item itemvalue="Application.Main" />
       </list>

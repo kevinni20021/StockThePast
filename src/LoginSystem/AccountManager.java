@@ -61,7 +61,7 @@ public class AccountManager {
      * @param username the username that the new account uses
      * @param password the password that the new account uses
      */
-    public void createAccount(String username, String password) {
+    public int createAccount(String username, String password) {
         if (this.accounts.containsKey(username)){
             return 0;
         } else {

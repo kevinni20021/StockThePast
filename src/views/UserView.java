@@ -35,6 +35,12 @@ public class UserView {
 
     public ReadFile date;
 
+    public final int fontSizeSmall = 8;
+    public final int fontSizeDefault = 14;
+    public final int fontSizeBig = 28;
+
+    public static int currFont = 14;
+
     StockFactory stockFactory = new StockFactory();
     Button addButton, buyButton, sellButton, ROIButton, historyButton, nextButton, logoutButton, accessibilityButton;
 
@@ -72,8 +78,12 @@ public class UserView {
 
         addButton = new Button("Add\nBalance");
         addButton.setId("AddBalance");
-        addButton.setPrefSize(80, 50);
-        addButton.setFont(new Font(14));
+        addButton.setFont(new Font(currFont));
+        if (currFont - 2 > 16) {
+            addButton.setPrefSize(160, 50);
+        } else {
+            addButton.setPrefSize(80, 50);
+        }
         addButton.setStyle("-fx-background-color: #17871b; -fx-text-fill: white;");
 
         addButton.setOnAction(e -> {
@@ -83,8 +93,12 @@ public class UserView {
 
         buyButton = new Button("Buy");
         buyButton.setId("Buy");
-        buyButton.setPrefSize(80, 50);
-        buyButton.setFont(new Font(14));
+        buyButton.setFont(new Font(currFont));
+        if (currFont - 2 > 16) {
+            buyButton.setPrefSize(160, 50);
+        } else {
+            buyButton.setPrefSize(80, 50);
+        }
         buyButton.setStyle("-fx-background-color: #17871b; -fx-text-fill: white;");
 
         buyButton.setOnAction(e -> {
@@ -94,8 +108,12 @@ public class UserView {
 
         sellButton = new Button("Sell");
         sellButton.setId("Sell");
-        sellButton.setPrefSize(80, 50);
-        sellButton.setFont(new Font(14));
+        sellButton.setFont(new Font(currFont));
+        if (currFont - 2 > 16) {
+            sellButton.setPrefSize(160, 50);
+        } else {
+            sellButton.setPrefSize(80, 50);
+        }
         sellButton.setStyle("-fx-background-color: #17871b; -fx-text-fill: white;");
 
         sellButton.setOnAction(e -> {
@@ -105,8 +123,12 @@ public class UserView {
 
         ROIButton = new Button("ROI");
         ROIButton.setId("ROI");
-        ROIButton.setPrefSize(80, 50);
-        ROIButton.setFont(new Font(14));
+        ROIButton.setFont(new Font(currFont));
+        if (currFont - 2 > 16) {
+            ROIButton.setPrefSize(160, 50);
+        } else {
+            ROIButton.setPrefSize(80, 50);
+        }
         ROIButton.setStyle("-fx-background-color: #17871b; -fx-text-fill: white;");
 
         ROIButton.setOnAction(e -> {
@@ -116,8 +138,12 @@ public class UserView {
 
         historyButton = new Button("History");
         historyButton.setId("History");
-        historyButton.setPrefSize(80, 50);
-        historyButton.setFont(new Font(14));
+        historyButton.setFont(new Font(currFont));
+        if (currFont - 2 > 16) {
+            historyButton.setPrefSize(160, 50);
+        } else {
+            historyButton.setPrefSize(80, 50);
+        }
         historyButton.setStyle("-fx-background-color: #17871b; -fx-text-fill: white;");
 
         historyButton.setOnAction(e -> {
@@ -127,8 +153,12 @@ public class UserView {
 
         nextButton = new Button("Next Day");
         nextButton.setId("nextDay");
-        nextButton.setPrefSize(80, 50);
-        nextButton.setFont(new Font(14));
+        nextButton.setFont(new Font(currFont));
+        if (currFont - 2 > 16) {
+            nextButton.setPrefSize(160, 50);
+        } else {
+            nextButton.setPrefSize(80, 50);
+        }
         nextButton.setStyle("-fx-background-color: #17871b; -fx-text-fill: white;");
 
         nextButton.setOnAction(e -> {
@@ -141,19 +171,23 @@ public class UserView {
         balanceLabel.setId("balanceLabel");
         balanceLabel.setText("Balance: " + user.getBalance());
         balanceLabel.setMinWidth(200);
-        balanceLabel.setFont(new Font(14));
+        balanceLabel.setFont(new Font(currFont));
         balanceLabel.setStyle("-fx-background-color: #17871b; -fx-text-fill: white;");
 
         dateLabel.setId("dateLabel");
         dateLabel.setText("Date: " + date.getCurrDay());
         dateLabel.setMinWidth(125);
-        dateLabel.setFont(new Font(14));
+        dateLabel.setFont(new Font(currFont));
         dateLabel.setStyle("-fx-background-color: #17871b; -fx-text-fill: white;");
 
         logoutButton = new Button("Logout");
         logoutButton.setId("logoutButton");
-        logoutButton.setPrefSize(100, 50);
-        logoutButton.setFont(new Font(12));
+        logoutButton.setFont(new Font(currFont - 2));
+        if (currFont - 2 > 16) {
+            logoutButton.setPrefSize(200, 50);
+        } else {
+            logoutButton.setPrefSize(100, 50);
+        }
         logoutButton.setStyle("-fx-background-color: #17871b; -fx-text-fill: white;");
 
         logoutButton.setOnAction(e -> {
@@ -163,8 +197,12 @@ public class UserView {
 
         accessibilityButton = new Button("Accessibility");
         accessibilityButton.setId("accessibility");
-        accessibilityButton.setPrefSize(100, 50);
-        accessibilityButton.setFont(new Font(12));
+        accessibilityButton.setFont(new Font(currFont - 2));
+        if (currFont - 2 > 16) {
+            accessibilityButton.setPrefSize(200, 50);
+        } else {
+            accessibilityButton.setPrefSize(100, 50);
+        }
         accessibilityButton.setStyle("-fx-background-color: #17871b; -fx-text-fill: white;");
 
         accessibilityButton.setOnAction(e -> {
@@ -245,5 +283,9 @@ public class UserView {
 
     private void createHistoryView() {HistoryView historyView = new HistoryView(user);}
 
-    private void createAccessibilityView() {AccessibilityView accessibilityView = new AccessibilityView();}
+    private void createAccessibilityView() {AccessibilityView accessibilityView = new AccessibilityView(this);}
+
+    public static void setFontSize(double size) {
+        currFont = (int) size;
+    }
 }

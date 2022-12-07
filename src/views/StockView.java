@@ -50,7 +50,8 @@ public class StockView {
             userViews.get(user.getUserID()).initUI();
         }
         else {
-            iew);
+            UserView view = new UserView(user, stage);
+            userViews.put(user.getUserID(), view);
         }
     }
 }

@@ -14,7 +14,8 @@ import javafx.geometry.Insets;
  */
 public class AccessibilityView {
 
-    Button bigButton, defaultBbutton, smallButton;
+    UserView view;
+    Button bigButton, defaultButton, smallButton;
 
     public final double fontSizeSmall = 8;
     public final double fontSizeDefault = 14;
@@ -27,7 +28,8 @@ public class AccessibilityView {
     /**
      * Main code that created this page
      */
-    public AccessibilityView() {
+    public AccessibilityView(UserView view) {
+        this.view = view;
         final Stage dialog = new Stage(); //dialogue box
         dialog.initModality(Modality.APPLICATION_MODAL);
         VBox dialogVbox = new VBox(20);
@@ -71,6 +73,8 @@ public class AccessibilityView {
             HistoryView.setFontSize(fontSizeDefault);
             ROIView.setFontSize(fontSizeDefault);
             SellView.setFontSize(fontSizeDefault);
+            UserView.setFontSize(fontSizeDefault);
+            view.initUI();
         });
 
         bigButton.setOnAction(e -> {
@@ -79,6 +83,9 @@ public class AccessibilityView {
             HistoryView.setFontSize(fontSizeBig);
             ROIView.setFontSize(fontSizeBig);
             SellView.setFontSize(fontSizeBig);
+            UserView.setFontSize(fontSizeBig - 2);
+            view.initUI();
+            view.dateLabel.setFont(new Font(16));
         });
 
         smallButton.setOnAction(e -> {
@@ -87,6 +94,8 @@ public class AccessibilityView {
             HistoryView.setFontSize(fontSizeSmall);
             ROIView.setFontSize(fontSizeSmall);
             SellView.setFontSize(fontSizeSmall);
+            UserView.setFontSize(fontSizeSmall);
+            view.initUI();
         });
     }
 }

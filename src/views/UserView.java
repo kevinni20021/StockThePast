@@ -67,14 +67,13 @@ public class UserView {
     public UserView(User user, Stage primaryStage) {
         this.user = user;
         this.stage = primaryStage;
+        date = new ReadFile("./Stocks Data/Amazon.csv");
         initUI();
     }
 
     public void initUI() {
         stage.setTitle("CSC207 StockThePast");
         borderPane = new BorderPane();
-
-        date = new ReadFile("./Stocks Data/Amazon.csv");
 
         addButton = new Button("Add\nBalance");
         addButton.setId("AddBalance");

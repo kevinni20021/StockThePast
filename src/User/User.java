@@ -99,6 +99,8 @@ public class User {
 
     public double getInitial() {return initial;}
 
+    public String getUserID() {return userID;};
+
     public void setName(String name) {
         this.name = name;
     }

@@ -1,5 +1,6 @@
 package views;
 import LoginSystem.LoginSystem;
+import User.User;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
@@ -14,6 +15,7 @@ import javafx.stage.Stage;
 import java.util.Objects;
 
 public class LoginView {
+    User user;
 
     Stage stage;
     LoginSystem loginSystem;
@@ -42,9 +44,10 @@ public class LoginView {
     private PasswordField passwordField = new PasswordField();
 
     //TextField for username and password for create Account
-    private TextField newusernameField = new TextField("");
-    private PasswordField newpasswordField = new PasswordField();
-    private PasswordField confirmpasswordField = new PasswordField();
+    private TextField newUsernameField = new TextField("");
+    private PasswordField newPasswordField = new PasswordField();
+    private PasswordField confirmPasswordField = new PasswordField();
+
 
     //Will start on the login page
     public LoginView(Stage stage, LoginSystem loginSystem) {
@@ -89,23 +92,23 @@ public class LoginView {
         //initialization for buttons and labels
         createAccountError.setId("createAccountError");
 
-        newpasswordField.setId("newpasswordField");
-        newpasswordField.setPromptText("New Password");
-        newpasswordField.setMaxWidth(400);
-        newpasswordField.setStyle("-fx-text-fill: #e8e6e3; -fx-text-fill: black;");
-        newpasswordField.setFont(new Font(fontSizeDefault));
+        newPasswordField.setId("newpasswordField");
+        newPasswordField.setPromptText("New Password");
+        newPasswordField.setMaxWidth(400);
+        newPasswordField.setStyle("-fx-text-fill: #e8e6e3; -fx-text-fill: black;");
+        newPasswordField.setFont(new Font(fontSizeDefault));
 
-        newusernameField.setId("newusernameField");
-        newusernameField.setPromptText("New Username");
-        newusernameField.setMaxWidth(400);
-        newusernameField.setStyle("-fx-text-fill: #e8e6e3; -fx-text-fill: black;");
-        newusernameField.setFont(new Font(fontSizeDefault));
+        newUsernameField.setId("newusernameField");
+        newUsernameField.setPromptText("New Username");
+        newUsernameField.setMaxWidth(400);
+        newUsernameField.setStyle("-fx-text-fill: #e8e6e3; -fx-text-fill: black;");
+        newUsernameField.setFont(new Font(fontSizeDefault));
 
-        confirmpasswordField.setId("confirmpasswordField");
-        confirmpasswordField.setPromptText("Confirm Password");
-        confirmpasswordField.setMaxWidth(400);
-        confirmpasswordField.setStyle("-fx-text-fill: #e8e6e3; -fx-text-fill: black;");
-        confirmpasswordField.setFont(new Font(fontSizeDefault));
+        confirmPasswordField.setId("confirmpasswordField");
+        confirmPasswordField.setPromptText("Confirm Password");
+        confirmPasswordField.setMaxWidth(400);
+        confirmPasswordField.setStyle("-fx-text-fill: #e8e6e3; -fx-text-fill: black;");
+        confirmPasswordField.setFont(new Font(fontSizeDefault));
 
         createButton = new Button("Create");
         createButton.setId("Create Account");
@@ -138,10 +141,6 @@ public class LoginView {
         createAccountError.setStyle("-fx-text-fill: #e8e6e3;");
         createAccountError.setFont(new Font(fontSizeDefault));
 
-        //temporary will add in backend later
-        errorLabel.setText("Login System on Maintenence");
-        createAccountError.setText("Login System on Maintenence");
-
         //Aliignment for buttons and text fields for login
         HBox loginSystemButtons = new HBox(100, loginButton, createAccountButton);
         loginSystemButtons.setAlignment(Pos.CENTER);
@@ -154,7 +153,7 @@ public class LoginView {
         VBox loginPage = new VBox(10, title, usernameField, passwordField, loginSystemButtons, errorLabel);
 
         //Allignment for the entire createa account page
-        VBox createPage = new VBox(10, createTitle, newusernameField, newpasswordField, confirmpasswordField, createAccountButtons, createAccountError);
+        VBox createPage = new VBox(10, createTitle, newUsernameField, newPasswordField, confirmPasswordField, createAccountButtons, createAccountError);
 
         //Create Account page is invisible to start
         loginView(createPage, loginPage);
@@ -191,19 +190,28 @@ public class LoginView {
 
     //Backend methods go here
     private void loginAccount(){
-        String password = this.usernameField.getText();
-        String username = this.passwordField.getText();
-        this.loginSystem.login(username, password);
+        String username = this.usernameField.getText();
+        String password = this.passwordField.getText();
+        if (this.loginSystem.login(username, password) != null){
+            this.user = this.loginSystem.getAccount().getUser();
+            StockView.activateStocks(this.user);
+        } else {
+            this.errorLabel.setText(this.loginSystem.errorMsg);
+            this.loginSystem.logout();
+        }
     }
 
     private void createAccount(){
-        String newpassword = this.newpasswordField.getText();
-        String confirmpassword = this.confirmpasswordField.getText();
-        String newusername = this.newusernameField.getText();
-        if (!Objects.equals(newpassword, confirmpassword)){
+        String newPassword = this.newPasswordField.getText();
+        String confirmPassword = this.confirmPasswordField.getText();
+        String newUsername = this.newUsernameField.getText();
+        if (!Objects.equals(newPassword, confirmPassword)){
             this.createAccountError.setText("Passwords do not match, please try again");
+        } else if (this.loginSystem.createAccount(newUsername, newPassword) == 0) {
+            this.createAccountError.setText("Username is taken");
         } else {
-            this.loginSystem.createAccount(newusername,newpassword);
+            this.loginSystem.createAccount(newUsername, newPassword);
+            this.createAccountError.setText("Successful!");
         }
     }
 }

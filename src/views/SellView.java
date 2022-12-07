@@ -23,7 +23,7 @@ public class SellView {
     private ListView<String> stocksList;
 
     private StockFactory stockFactory = new StockFactory();
-    private Label amountLabel = new Label(String.format("Enter the amount of stocks you want to sell"));
+    private Label amountLabel = new Label(String.format("Enter the amount of\nstocks you want to sell"));
     private TextField amount = new TextField("");
 
     private Label sellLabel = new Label("");
@@ -85,7 +85,7 @@ public class SellView {
         amountLabel.setFont(new Font(fontSize));
 
         amount.setId("amount");
-        amount.setStyle("-fx-text-fill: #e8e6e3;");
+        amount.setStyle("-fx-text-fill: #17871b;");
         amount.setFont(new Font(fontSize));
 
         selectStockLabel.setStyle("-fx-text-fill: #e8e6e3");

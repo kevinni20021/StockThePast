@@ -11,7 +11,6 @@ public class LoginSystem {
     public Account login(String username, String password) {
         switch (this.accounts.login(username, password)) {
             case 0 -> {
-                System.out.println("Login Successful");
                 return this.accounts.getActive();
             }
             case 1 -> errorMsg = "Already logged in";
@@ -22,8 +21,8 @@ public class LoginSystem {
         return null;
     }
 
-    public void createAccount(String username, String password) {
-        this.accounts.createAccount(username, password);
+    public int createAccount(String username, String password) {
+        return this.accounts.createAccount(username, password);
     }
 
     public void logout() {

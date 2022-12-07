@@ -123,7 +123,7 @@ public class AddView {
         amountLabel.setFont(new Font(fontSize));
 
         amount.setId("amount");
-        amount.setStyle("-fx-text-fill: #e8e6e3;");
+        amount.setStyle("-fx-text-fill: #17871b;");
         amount.setFont(new Font(fontSize));
 
         add.setStyle("-fx-background-color: #17871b; -fx-text-fill: white;");

@@ -18,12 +18,8 @@ public class AccountManager {
     //Error code 3 means User.User not in system
     //Error code 2 means incorrect username or password
     public int login(String username, String password) {
-        System.out.println(this.accounts);
-        System.out.println(username);
-        System.out.println(this.accounts.containsKey(username));
         if (this.isCurrLoggedin()) {
             return 1;
-            //System.out.println("Already logged in");
         }
         if (this.accounts.containsKey(username)) {
             if (this.accounts.get(username).containsKey(password)) {
@@ -31,24 +27,22 @@ public class AccountManager {
                 this.activeAccount.login();
                 this.setCurrLoggedin(true);
                 return 0;
-                //System.out.println("Login Successful");
             } else {
                 return 2;
-                //System.out.println("Incorrect username or password");
             }
         } else {
             return 3;
-            //System.out.println("User.User not in system, please create a new account");
         }
     }
 
-    public void createAccount(String username, String password) {
+    public int createAccount(String username, String password) {
         if (this.accounts.containsKey(username)){
-            System.out.println("Username is taken");
+            return 0;
         } else {
             HashMap<String, Account> passanduser = new HashMap<String, Account>();
             passanduser.put(password, new Account(username, password)); //new Acoount(new User.User)
             this.accounts.put(username, passanduser);
+            return 1;
         }
     }
     private boolean isCurrLoggedin() {
@@ -67,4 +61,6 @@ public class AccountManager {
         this.setCurrLoggedin(false);
         this.activeAccount = null;
     }
+
+    public HashMap<String, HashMap<String, Account>> getAccounts() {return accounts;}
 }

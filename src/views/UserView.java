@@ -22,6 +22,11 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
+
+/**
+ * This class is responsible for the user page of the application
+ * This class is merged into StockView
+ */
 public class UserView {
 
     private User user;
@@ -29,10 +34,15 @@ public class UserView {
     private TextField addBalanceTextField = new TextField("");
 
     public ReadFile date;
-    public static double fontSize = 16;
+
+    public final int fontSizeSmall = 8;
+    public final int fontSizeDefault = 14;
+    public final int fontSizeBig = 28;
+
+    public static int currFont = 14;
 
     StockFactory stockFactory = new StockFactory();
-    Button addButton, buyButton, sellButton, ROIButton, historyButton, nextButton;
+    Button addButton, buyButton, sellButton, ROIButton, historyButton, nextButton, logoutButton, accessibilityButton;
 
     Label balanceLabel = new Label();
 
@@ -53,22 +63,26 @@ public class UserView {
 
     XYChart.Series<String, Number> graphTesla = new XYChart.Series<>();
 
+
     public UserView(User user, Stage primaryStage) {
         this.user = user;
         this.stage = primaryStage;
+        date = new ReadFile("./Stocks Data/Amazon.csv");
         initUI();
     }
 
-    private void initUI() {
+    public void initUI() {
         stage.setTitle("CSC207 StockThePast");
         borderPane = new BorderPane();
 
-        date = new ReadFile("./Stocks Data/Amazon.csv");
-
-        addButton = new Button("Add Balance");
+        addButton = new Button("Add\nBalance");
         addButton.setId("AddBalance");
-        addButton.setPrefSize(80, 50);
-        addButton.setFont(new Font(fontSize));
+        addButton.setFont(new Font(currFont));
+        if (currFont - 2 > 16) {
+            addButton.setPrefSize(160, 50);
+        } else {
+            addButton.setPrefSize(80, 50);
+        }
         addButton.setStyle("-fx-background-color: #17871b; -fx-text-fill: white;");
 
         addButton.setOnAction(e -> {
@@ -78,8 +92,12 @@ public class UserView {
 
         buyButton = new Button("Buy");
         buyButton.setId("Buy");
-        buyButton.setPrefSize(80, 50);
-        buyButton.setFont(new Font(fontSize));
+        buyButton.setFont(new Font(currFont));
+        if (currFont - 2 > 16) {
+            buyButton.setPrefSize(160, 50);
+        } else {
+            buyButton.setPrefSize(80, 50);
+        }
         buyButton.setStyle("-fx-background-color: #17871b; -fx-text-fill: white;");
 
         buyButton.setOnAction(e -> {
@@ -89,8 +107,12 @@ public class UserView {
 
         sellButton = new Button("Sell");
         sellButton.setId("Sell");
-        sellButton.setPrefSize(80, 50);
-        sellButton.setFont(new Font(fontSize));
+        sellButton.setFont(new Font(currFont));
+        if (currFont - 2 > 16) {
+            sellButton.setPrefSize(160, 50);
+        } else {
+            sellButton.setPrefSize(80, 50);
+        }
         sellButton.setStyle("-fx-background-color: #17871b; -fx-text-fill: white;");
 
         sellButton.setOnAction(e -> {
@@ -100,8 +122,12 @@ public class UserView {
 
         ROIButton = new Button("ROI");
         ROIButton.setId("ROI");
-        ROIButton.setPrefSize(80, 50);
-        ROIButton.setFont(new Font(fontSize));
+        ROIButton.setFont(new Font(currFont));
+        if (currFont - 2 > 16) {
+            ROIButton.setPrefSize(160, 50);
+        } else {
+            ROIButton.setPrefSize(80, 50);
+        }
         ROIButton.setStyle("-fx-background-color: #17871b; -fx-text-fill: white;");
 
         ROIButton.setOnAction(e -> {
@@ -111,8 +137,12 @@ public class UserView {
 
         historyButton = new Button("History");
         historyButton.setId("History");
-        historyButton.setPrefSize(80, 50);
-        historyButton.setFont(new Font(fontSize));
+        historyButton.setFont(new Font(currFont));
+        if (currFont - 2 > 16) {
+            historyButton.setPrefSize(160, 50);
+        } else {
+            historyButton.setPrefSize(80, 50);
+        }
         historyButton.setStyle("-fx-background-color: #17871b; -fx-text-fill: white;");
 
         historyButton.setOnAction(e -> {
@@ -122,8 +152,12 @@ public class UserView {
 
         nextButton = new Button("Next Day");
         nextButton.setId("nextDay");
-        nextButton.setPrefSize(80, 50);
-        nextButton.setFont(new Font(fontSize));
+        nextButton.setFont(new Font(currFont));
+        if (currFont - 2 > 16) {
+            nextButton.setPrefSize(160, 50);
+        } else {
+            nextButton.setPrefSize(80, 50);
+        }
         nextButton.setStyle("-fx-background-color: #17871b; -fx-text-fill: white;");
 
         nextButton.setOnAction(e -> {
@@ -136,14 +170,47 @@ public class UserView {
         balanceLabel.setId("balanceLabel");
         balanceLabel.setText("Balance: " + user.getBalance());
         balanceLabel.setMinWidth(200);
-        balanceLabel.setFont(new Font(fontSize));
+        balanceLabel.setFont(new Font(currFont));
         balanceLabel.setStyle("-fx-background-color: #17871b; -fx-text-fill: white;");
 
         dateLabel.setId("dateLabel");
         dateLabel.setText("Date: " + date.getCurrDay());
         dateLabel.setMinWidth(125);
-        dateLabel.setFont(new Font(fontSize));
+        dateLabel.setFont(new Font(currFont));
         dateLabel.setStyle("-fx-background-color: #17871b; -fx-text-fill: white;");
+
+        logoutButton = new Button("Logout");
+        logoutButton.setId("logoutButton");
+        logoutButton.setFont(new Font(currFont - 2));
+        if (currFont - 2 > 16) {
+            logoutButton.setPrefSize(200, 50);
+        } else {
+            logoutButton.setPrefSize(100, 50);
+        }
+        logoutButton.setStyle("-fx-background-color: #17871b; -fx-text-fill: white;");
+
+        logoutButton.setOnAction(e -> {
+            StockView.logout();
+            borderPane.requestFocus();
+        });
+
+        accessibilityButton = new Button("Accessibility");
+        accessibilityButton.setId("accessibility");
+        accessibilityButton.setFont(new Font(currFont - 2));
+        if (currFont - 2 > 16) {
+            accessibilityButton.setPrefSize(200, 50);
+        } else {
+            accessibilityButton.setPrefSize(100, 50);
+        }
+        accessibilityButton.setStyle("-fx-background-color: #17871b; -fx-text-fill: white;");
+
+        accessibilityButton.setOnAction(e -> {
+            createAccessibilityView();
+            borderPane.requestFocus();
+        });
+
+        HBox logButton = new HBox(800, accessibilityButton, logoutButton);
+        logButton.setAlignment(Pos.CENTER);
 
         HBox controls = new HBox(20, dateLabel, balanceLabel, nextButton, addButton, buyButton, sellButton, ROIButton, historyButton);
         controls.setPadding(new Insets(20, 20, 20, 20));
@@ -173,6 +240,7 @@ public class UserView {
 
         borderPane.setTop(controls);
         borderPane.setCenter(root);
+        borderPane.setBottom(logButton);
 
         Scene scene = new Scene(borderPane, 1000, 800);
         stage.setScene(scene);
@@ -189,26 +257,18 @@ public class UserView {
                 graphStarBucks.getData().remove(0);
                 graphTesla.getData().remove(0);
             }
-            graphAmazon.getData().add(new XYChart.Data<String, Number>(date.getCurrDay(), stockFactory.getStock("Amazon").getPrice(date.getCurrDay())));
-            graphApple.getData().add(new XYChart.Data<String, Number>(date.getCurrDay(), stockFactory.getStock("Apple").getPrice(date.getCurrDay())));
-            graphMeta.getData().add(new XYChart.Data<String, Number>(date.getCurrDay(), stockFactory.getStock("Meta").getPrice(date.getCurrDay())));
-            graphMicrosoft.getData().add(new XYChart.Data<String, Number>(date.getCurrDay(), stockFactory.getStock("Microsoft").getPrice(date.getCurrDay())));
-            graphStarBucks.getData().add(new XYChart.Data<String, Number>(date.getCurrDay(), stockFactory.getStock("StarBucks").getPrice(date.getCurrDay())));
-            graphTesla.getData().add(new XYChart.Data<String, Number>(date.getCurrDay(), stockFactory.getStock("Tesla").getPrice(date.getCurrDay())));
+            String day = date.getCurrDay();
+            graphAmazon.getData().add(new XYChart.Data<String, Number>(day, stockFactory.getStock("Amazon").getPrice(day)));
+            graphApple.getData().add(new XYChart.Data<String, Number>(day, stockFactory.getStock("Apple").getPrice(day)));
+            graphMeta.getData().add(new XYChart.Data<String, Number>(day, stockFactory.getStock("Meta").getPrice(day)));
+            graphMicrosoft.getData().add(new XYChart.Data<String, Number>(day, stockFactory.getStock("Microsoft").getPrice(day)));
+            graphStarBucks.getData().add(new XYChart.Data<String, Number>(day, stockFactory.getStock("StarBucks").getPrice(day)));
+            graphTesla.getData().add(new XYChart.Data<String, Number>(day, stockFactory.getStock("Tesla").getPrice(day)));
         }
         catch (IOException ex) {
             throw new RuntimeException(ex);
         }
     }
-
-
-    /**
-     * This is a setter method for setting the fontSize
-     */
-    public static void setFontSize(double size) {
-        UserView.fontSize = size;
-    }
-
 
     private void createAddView() {AddView addView = new AddView(user, balanceLabel);}
 
@@ -221,4 +281,10 @@ public class UserView {
     private void createROIView() {ROIView roiView = new ROIView(user, date.getCurrDay());}
 
     private void createHistoryView() {HistoryView historyView = new HistoryView(user);}
+
+    private void createAccessibilityView() {AccessibilityView accessibilityView = new AccessibilityView(this);}
+
+    public static void setFontSize(double size) {
+        currFont = (int) size;
+    }
 }

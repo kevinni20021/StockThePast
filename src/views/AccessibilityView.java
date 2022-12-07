@@ -9,22 +9,27 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.geometry.Insets;
 
-//public class AccessibilityPage extends Application implements EventHandler<ActionEvent> {
+/**
+ * This class is responsible for the accessibility subpage of the application
+ */
 public class AccessibilityView {
 
-    Button bigButton, defaultBbutton, smallButton;
+    UserView view;
+    Button bigButton, defaultButton, smallButton;
 
     public final double fontSizeSmall = 8;
-    public final double fontSizeDefault = 16;
-    public final double fontSizeBig = 32;
+    public final double fontSizeDefault = 14;
+    public final double fontSizeBig = 28;
 
     private int buttonLength = 150;
     private int buttonWidth = 50;
 
 
-
-
-    public AccessibilityView() {
+    /**
+     * Main code that created this page
+     */
+    public AccessibilityView(UserView view) {
+        this.view = view;
         final Stage dialog = new Stage(); //dialogue box
         dialog.initModality(Modality.APPLICATION_MODAL);
         VBox dialogVbox = new VBox(20);
@@ -33,11 +38,11 @@ public class AccessibilityView {
 
 
         //creating the button
-        defaultBbutton = new Button("Default");
-        defaultBbutton.setId("Default");
-        defaultBbutton.setPrefSize(buttonLength, buttonWidth);
-        defaultBbutton.setFont(new Font(fontSizeDefault));
-        defaultBbutton.setStyle("-fx-background-color: #17871b; -fx-text-fill: white;");
+        defaultButton = new Button("Default");
+        defaultButton.setId("Default");
+        defaultButton.setPrefSize(buttonLength, buttonWidth);
+        defaultButton.setFont(new Font(fontSizeDefault));
+        defaultButton.setStyle("-fx-background-color: #17871b; -fx-text-fill: white;");
 
         bigButton = new Button("Big");
         bigButton.setId("Big");
@@ -52,22 +57,7 @@ public class AccessibilityView {
         smallButton.setStyle("-fx-background-color: #17871b; -fx-text-fill: white;");
 
         //top right bottom left
-        VBox accessibilityBox = new VBox(75, bigButton, defaultBbutton, smallButton);
-//        HBox topButton = new HBox(bigButton);
-//        topButton.setPadding(new Insets((borderPaneWidth - 3 * buttonWidth) / 6, (borderPaneLength -  buttonLength) / 2, (borderPaneWidth - 3 * buttonWidth) / 6, (borderPaneLength -  buttonLength) / 2));
-//        topButton.setAlignment(Pos.CENTER);
-//
-//        HBox centerButton = new HBox(defaultBbutton);
-//        centerButton.setPadding(new Insets((borderPaneWidth - 3 * buttonWidth) / 6, (borderPaneLength -  buttonLength) / 2, (borderPaneWidth - 3 * buttonWidth) / 6, (borderPaneLength -  buttonLength) / 2));
-//        centerButton.setAlignment(Pos.CENTER);
-//
-//        HBox bottomBbuttons = new HBox(smallButton);
-//        bottomBbuttons.setPadding(new Insets((borderPaneWidth - 3 * buttonWidth) / 6, (borderPaneLength -  buttonLength) / 2, (borderPaneWidth - 3 * buttonWidth) / 6, (borderPaneLength -  buttonLength) / 2));
-//        bottomBbuttons.setAlignment(Pos.CENTER);
-
-//        borderPane.setTop(topButton);
-//        borderPane.setCenter(centerButton);
-//        borderPane.setBottom(bottomBbuttons);
+        VBox accessibilityBox = new VBox(75, bigButton, defaultButton, smallButton);
 
         //setting the size for our window
         accessibilityBox.setAlignment(Pos.CENTER);
@@ -77,14 +67,14 @@ public class AccessibilityView {
         dialog.setScene(dialogScene);
         dialog.show();
 
-        defaultBbutton.setOnAction(e -> {
+        defaultButton.setOnAction(e -> {
             AddView.setFontSize(fontSizeDefault);
             BuyView.setFontSize(fontSizeDefault);
             HistoryView.setFontSize(fontSizeDefault);
             ROIView.setFontSize(fontSizeDefault);
             SellView.setFontSize(fontSizeDefault);
-            StockView.setFontSize(fontSizeDefault);
-
+            UserView.setFontSize(fontSizeDefault);
+            view.initUI();
         });
 
         bigButton.setOnAction(e -> {
@@ -93,7 +83,9 @@ public class AccessibilityView {
             HistoryView.setFontSize(fontSizeBig);
             ROIView.setFontSize(fontSizeBig);
             SellView.setFontSize(fontSizeBig);
-            StockView.setFontSize(fontSizeBig);
+            UserView.setFontSize(fontSizeBig - 2);
+            view.initUI();
+            view.dateLabel.setFont(new Font(16));
         });
 
         smallButton.setOnAction(e -> {
@@ -102,7 +94,8 @@ public class AccessibilityView {
             HistoryView.setFontSize(fontSizeSmall);
             ROIView.setFontSize(fontSizeSmall);
             SellView.setFontSize(fontSizeSmall);
-            StockView.setFontSize(fontSizeSmall);
+            UserView.setFontSize(fontSizeSmall);
+            view.initUI();
         });
     }
 }

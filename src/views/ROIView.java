@@ -11,6 +11,9 @@ import javafx.stage.Stage;
 import User.User;
 
 
+/**
+ * This class is responsible for the Return in Investment subpage of the application
+ */
 public class ROIView {
     private Label returnLabel = new Label(String.format("Return on Investments"));
 
@@ -20,6 +23,12 @@ public class ROIView {
     private ListView<String> stocksList;
     public static double fontSize = 16;
 
+
+    /**
+     * Main code for the page
+     * @param user the specific user that the program is checking ROI on
+     * @param date the date the program is checking on
+     */
     public ROIView(User user, String date) {
         stocksList = new ListView<>();
 

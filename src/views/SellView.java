@@ -17,18 +17,28 @@ import java.io.IOException;
 import User.User;
 
 
+/**
+ * This class is responsible for the sell stock subpage of the application
+ */
 public class SellView {
     private Label selectStockLabel;
     private Button selectStockButton;
     private ListView<String> stocksList;
 
     private StockFactory stockFactory = new StockFactory();
-    private Label amountLabel = new Label(String.format("Enter the amount of stocks you want to sell"));
+    private Label amountLabel = new Label(String.format("Enter the amount of\nstocks you want to sell"));
     private TextField amount = new TextField("");
 
     private Label sellLabel = new Label("");
     public static double fontSize = 16;
 
+
+    /**
+     * Main code that created this page
+     * @param user the user the program is selling stocks for
+     * @param balanceLabel the label the program is changing
+     * @param date the date the user is selling the stocks at
+     */
     public SellView(User user, Label balanceLabel, String date) {
         Command sell = new sellCommand(user);
         selectStockLabel = new Label(String.format("List of stocks to sell"));
@@ -85,7 +95,7 @@ public class SellView {
         amountLabel.setFont(new Font(fontSize));
 
         amount.setId("amount");
-        amount.setStyle("-fx-text-fill: #e8e6e3;");
+        amount.setStyle("-fx-text-fill: #17871b;");
         amount.setFont(new Font(fontSize));
 
         selectStockLabel.setStyle("-fx-text-fill: #e8e6e3");

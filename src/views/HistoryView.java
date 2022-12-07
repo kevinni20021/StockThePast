@@ -14,11 +14,19 @@ import java.util.ArrayList;
 import User.User;
 
 
+/**
+ * This class is responsible for the history view subpage of the application
+ */
 public class HistoryView {
     private Label historyLabel = new Label(String.format("Stock History"));
     private ListView<String> stocksList;
     public static double fontSize = 16;
 
+
+    /**
+     * Main code for the page
+     * @param user the specific user that the program is checking its history on
+     */
     public HistoryView(User user) {
         stocksList = new ListView<>();
 

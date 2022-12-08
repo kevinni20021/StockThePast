@@ -17,7 +17,6 @@ public class Amazon extends StocksData {
         super();
     }
 
-
     /**
      * This getter method is responsible for getting the name of the current file
      * @return the file name

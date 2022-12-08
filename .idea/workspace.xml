@@ -5,8 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="33eafcbf-f82e-4c0f-bcf4-1ab4ffb9491b" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/StockThePast.iml" beforeDir="false" afterPath="$PROJECT_DIR$/StockThePast.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/StockView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/StockView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Iterator/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Stocks/Amazon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Stocks/Amazon.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -89,7 +91,7 @@
     <configuration name="StockApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="StockApp" />
       <module name="StockThePast" />
-      <option name="VM_PARAMETERS" value="--module-path &quot;C:\Users\CGOD\Desktop\University\Second year\First Semester\CSC207\javafx-sdk-19\lib&quot; --add-modules javafx.controls,javafx.fxml " />
+      <option name="VM_PARAMETERS" value="--module-path &quot;C:\Users\kevin\OneDrive\Desktop\Java\javafx-sdk-19\lib&quot; --add-modules javafx.controls,javafx.fxml" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -168,6 +170,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Merged Main" />
